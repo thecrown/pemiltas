@@ -22,4 +22,12 @@ class Admin extends CI_Controller {
 		$data['pemilih'] = $this->Admin_model->daftar_pemilih(); 
 		$this->load->view('admin/daftar_pemilih',$data);
 	}
+	public function daftar_kandidat_bem(){
+		$data['pemilih'] = $this->Admin_model->daftar_pemilih(); 
+		$this->load->view('admin/daftar-kandidat-bem');
+	}
+	public function daftar_kandidat_senat(){
+		$data['pemilih'] = $this->Admin_model->daftar_pemilih(); 
+		$this->load->view('admin/daftar-kandidat-senat');
+	}
 }
