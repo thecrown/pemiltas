@@ -521,30 +521,25 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>No</th>
-                  <th>NIM</th>
-                  <th>Nama Pemilih</th>
+                  <th>No Urut</th>
+                  <th>Nama Kandidat</th>
                   <th>Angkatan</th>
-                  <th>Password</th>
-                  <th>Status</th>
                   <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php
                 ?>
-                <?php $no = 1; ?>
-                <?php if(isset($pemilih)){ ?>
-                <?php foreach($pemilih as $data){ ?>
+                
+                <?php if(isset($kandidat)){ ?>
+                <?php foreach($kandidat as $data){ ?>
                     <tr>
-                    <td><?php echo $no; ?></td>
-                    <td><?php echo $data['idpemilih']; ?></td>
-                    <td><?php echo $data['nama_pemilih']; ?></td>
+                    
+                    <td><?php echo $data['idkandidat_senat']; ?></td>
+                    <td><?php echo $data['nama_kandidat']; ?></td>
                     <td><?php echo $data['angkatan']; ?></td>
-                    <td><?php echo $data['password_pemilih']; ?></td>
-                    <td><?php echo $data['status']; ?></td>
                     <td>X</td>
-                    <?php $no++; ?>
+                    
                   </tr>
                   <?php } } ?>
                   
@@ -552,12 +547,9 @@
                 </tbody>
                 <tfoot>
                 <tr>
-                <th>No</th>
-                <th>NIM</th>
-                <th>Nama Pemilih</th>
+                <th>No Urut</th>
+                <th>Nama Kandidat</th>
                 <th>Angkatan</th>
-                <th>Password</th>
-                <th>Status</th>
                 <th>Action</th>
                 </tr>
                 </tfoot>
