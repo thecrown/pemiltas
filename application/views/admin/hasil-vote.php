@@ -498,8 +498,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Flot Charts
-        <small>preview sample</small>
+        Bagan Hasil Pemilihan
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -518,7 +517,7 @@
             <div class="box-header with-border">
             <i class="fa fa-bar-chart-o"></i>
 
-            <h3 class="box-title">Bar Chart</h3>
+            <h3 class="box-title">Bagan untuk BEM</h3>
 
             <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -527,7 +526,7 @@
             </div>
             </div>
             <div class="box-body">
-            <div id="bar-chart1" style="height: 300px;"></div>
+            <div id="bar-chart1-bem" style="height: 300px;"></div>
             </div>
             <!-- /.box-body-->
         </div>
@@ -541,7 +540,7 @@
             <div class="box-header with-border">
               <i class="fa fa-bar-chart-o"></i>
 
-              <h3 class="box-title">Bar Chart</h3>
+              <h3 class="box-title">Bagan untuk Senat</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -550,7 +549,7 @@
               </div>
             </div>
             <div class="box-body">
-              <div id="bar-chart2" style="height: 300px;"></div>
+              <div id="bar-chart2-senat" style="height: 300px;"></div>
             </div>
             <!-- /.box-body-->
           </div>
@@ -797,10 +796,10 @@
      */
     <?php $a=100; ?>
     var bar_data1 = {
-      data: [["January", <?php echo $a; ?>], ["February", 8], ["March", 4]],
-      color: "#ffd3ab"
+      data: [["No Urut 1", <?php echo $a; ?>], ["No Urut 2", 8], ["No Urut 3", 4], ["No Urut 4", 30]],
+      color: "#FB8C00"
     };
-    $.plot("#bar-chart1", [bar_data1], {
+    $.plot("#bar-chart1-bem", [bar_data1], {
       grid: {
         borderWidth: 1,
         borderColor: "#f3f3f3",
@@ -826,10 +825,10 @@
      */
      <?php $a=100; ?>
     var bar_data2 = {
-      data: [["January", <?php echo $a; ?>], ["February", 8], ["March", 4]],
-      color: "#ffd3ab"
+      data: [["No Urut 1", <?php echo $a; ?>], ["No Urut 2", 8], ["No Urut 3", 4], ["No Urut 4", 4]],
+      color: "#1976D2"
     };
-    $.plot("#bar-chart2", [bar_data2], {
+    $.plot("#bar-chart2-senat", [bar_data2], {
       grid: {
         borderWidth: 1,
         borderColor: "#f3f3f3",
