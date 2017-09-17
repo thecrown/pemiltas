@@ -53,6 +53,7 @@ $route['default_controller'] = 'welcome';
 $route['dashboard'] = 'admin';
 $route['daftar-pemilih'] = 'admin/daftar_pemilih';
 $route['kandidat-bem'] = 'admin/daftar_kandidat_bem';
+$route['hitung-vote'] = 'admin/hitung_vote';
 $route['kandidat-senat'] = 'admin/daftar_kandidat_senat';
 $route['login'] = 'user/login';
 $route['user/vote-bem'] = 'user/bem';

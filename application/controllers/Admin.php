@@ -30,4 +30,8 @@ class Admin extends CI_Controller {
 		$data['kandidat'] = $this->Admin_model->kandidat_senat(); 
 		$this->load->view('admin/daftar-kandidat-senat',$data);
 	}
+	public function hitung_vote(){
+		$data['kandidat'] = $this->Admin_model->kandidat_senat(); 
+		$this->load->view('admin/hasil-vote',$data);
+	}
 }
