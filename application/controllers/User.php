@@ -18,6 +18,35 @@ class User extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	function greeting_msg (){
+		date_default_timezone_set("Asia/Jakarta");
+
+		$hour = date("G",time());
+
+		if ($hour>=0 && $hour<=11)
+		{
+		return "Selamat Pagi";
+		}
+		elseif ($hour >=12 && $hour<=14)
+		{
+		return "Selamat Siang";
+		}
+		elseif ($hour >=15 && $hour<=17)
+		{
+		return "Selamat Sore";
+		}
+		elseif ($hour >=17 && $hour<=18)
+		{
+		return "Selamat Petang";
+		}
+		elseif ($hour >=19 && $hour<=23)
+		{
+		return "Selamat Malam";
+		}
+	}
+
+
+
 	public function index()
 	{
 		$this->load->view('user/layout');
@@ -30,12 +59,29 @@ class User extends CI_Controller {
 
 	public function bem() 
 	{
-		$this->load->view('user/vote-bem');
+		$data['waktu'] 	= $this->greeting_msg();
+		$data['view']	= 'vote-bem';
+		$data['title']	= 'Vote BEM';
+		$this->load->view('user/layout', $data);
 	}
 
-	public function senat($angkatan) 
+	public function senat($angkatan=null) 
 	{
 		$data['angkatan'] = $angkatan;
-		$this->load->view('user/vote-senat', $data);
+		$data['waktu'] = $this->greeting_msg();
+		$data['view']	= 'vote-senat';
+		$data['title']	= 'Vote Senator';
+		$this->load->view('user/layout', $data);
 	}
+
+	public function review() {
+		$data['waktu'] = $this->greeting_msg();
+		$data['view']	= 'vote-review';
+		$data['title']	= 'Vote Review';
+		$this->load->view('user/layout',$data);
+	}
+
+
+
+	
 }

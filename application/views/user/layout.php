@@ -1,9 +1,19 @@
+<?php 
+	if (isset($data)) {
+		$waktu = $data['waktu'];
+	}
+
+	$data['nama'] 		= $this->session->userdata('nama');
+	$data['nim']		= $this->session->userdata('nim');
+	$data['angkatan']	= $this->session->userdata('angkatan');
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Pemiltas FKM | Log in</title>
+  <title>Pemiltas FKM | <?php echo $title; ?></title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -11,7 +21,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- External css -->
-  <link rel="stylesheet" href="<?php echo base_url();?>assets/css/userlogin.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/css/userlayout.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,45 +30,10 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body id="login" class="hold-transition login-page" style="overflow: hidden;">
-<div class="background-image"></div>
-<div class="container">
-	<div class="row">
-		<div class="col-md-4 col-md-offset-4">
-			<div class="search-box">
-				<div class="caption text-center">
-					<h1>Selamat Datang!</h1>
-					<p>Silahkan login untuk vote</p>
-				</div>
-				<form action="" class="loginForm">
-					<div class="input-group">
-						<input type="text" id="name" class="form-control" placeholder="Pengguna">
-					</div>
-					<div class="input-group">
-						<input type="password" id="paw" class="form-control" placeholder="Kata Sandi">
-					</div>
-					<input type="submit" id="submit" class="form-control" value="Masuk">
-				</form>
-			</div>
-		</div>
-		<div class="col-md-4">
-			<div class="aro-pswd_info">
-				<div id="pswd_info">
-					<h4>Masukkan kode unik (token) Anda untuk autentikasi !</h4>
-				</div>
-				<div id="uname_info">
-					<h4>Gunakan NIM Anda untuk identifikasi akun !</h4>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-4 col-md-offset-4 text-center">
-			<div class="form-footer">
-				<h4>&copy; Pemiltas FKM 2017 |<button class="btn-link" data-toggle="modal" data-target="#myModal">Petunjuk</button></h4>
-			</div>
-		</div>
-	</div>
+<body>
+
+	<?php $this->load->view('user/'.$view, $data); ?>
+
 	<!-- Modal -->
 	<div id="myModal" class="modal fade" role="dialog">
 	  <div class="modal-dialog">
@@ -82,8 +57,6 @@
 
 	  </div>
 	</div>
-</div>
-  
 
 <!-- jQuery 2.2.3 -->
 <script src="<?php echo base_url();?>assets/plugins/jQuery/jquery-2.2.3.min.js"></script>
@@ -92,16 +65,10 @@
 <script>
 $(document).ready(function(){
 	
-	$('input[type=password]').focus(function() {
-		$('#pswd_info').show();
-	}).blur(function() {
-		$('#pswd_info').hide();
-	});
-
-	$('input[type=text]').focus(function() {
-		$('#uname_info').show();
-	}).blur(function() {
-		$('#uname_info').hide();
+	$('[data-toggle="tooltip"]').tooltip({
+		title: "Klik untuk vote !", 
+		placement: "top",
+		trigger : 'hover' 
 	});
 	
 });
