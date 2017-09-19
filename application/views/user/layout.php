@@ -3,9 +3,12 @@
 		$waktu = $data['waktu'];
 	}
 
-	$data['nama'] 		= $this->session->userdata('nama');
-	$data['nim']		= $this->session->userdata('nim');
-	$data['angkatan']	= $this->session->userdata('angkatan');
+	// $data['nama'] 		= $this->session->userdata('nama');
+	// $data['nim']		= $this->session->userdata('nim');
+	// $data['angkatan']	= $this->session->userdata('angkatan');
+	$data['nama'] = 'Amri Luthfi';
+	$data['nim'] = '21120114130060';
+	$data['angkatan'] = '2016';
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +33,7 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body>
+<body style="overflow-x: hidden;">
 
 	<?php $this->load->view('user/'.$view, $data); ?>
 
@@ -70,7 +73,6 @@ $(document).ready(function(){
 		placement: "top",
 		trigger : 'hover' 
 	});
-	
 });
 </script>
 </body>

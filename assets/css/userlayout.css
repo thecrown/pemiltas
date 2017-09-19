@@ -13,26 +13,6 @@ body {
   /*background: #F1F0FF ;*/
 }
 
-.floated {
-  position: fixed;
-  top: 10px;
-  left: 0;
-  z-index: 200;
-  background: rgba(255, 203, 0, .7);
-  color: #443266;
-}
-
-.profile {
-  width: 50px;
-  height: 50px;
-  cursor: pointer; 
-}
-
-.profile span {
-  font-size: 30px;
-  padding-top: 8px;
-}
-
 @keyframes click-wave {
   0% {
     height: 40px;
@@ -125,6 +105,26 @@ body {
   border-radius: 50%;
 }
 
+.onreview {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background: #443266;
+  display: inline-block;
+  top: 30px;
+  position: relative;
+  z-index: 100;
+}
+
+.onreview p {
+  font-size: 90px;
+  text-align: center;
+  color: #F1F0FF;
+  top: -12px;
+  left: 25px;
+  position: absolute;
+}
+
 .col-vote {
 	display: inline-block;
 	float: none;
@@ -134,17 +134,25 @@ body {
 
 .ava-container {
   background: rgba(192, 128, 184, 1);
+  height: 220px;
 }
 
 img.avatar {
 	max-width: 135px;
 	padding: 5%;
+  margin-top: 12px;
+  overflow-y: hidden;
 }
 
 .desc-container {
   background: rgba(166, 75, 154, 1);
 	padding-top: 3%;
   color: #F1F0FF;
+  height: 100px;
+}
+
+.desc-container p {
+  margin: 0;
 }
 
 .line {
@@ -209,14 +217,35 @@ a.btn-md:hover {
   border-bottom: 2px solid #F1F0FF;
 }
 
-a.btn-link {
+input.btn-link, input.btn-link:focus{
   color: #F1F0FF;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+input.btn-link:hover {
+  color: #F1F0FF;
+  text-decoration: underline;
+}
+
+a.btn-link, a.btn-link:focus{
+  color: #F1F0FF;
+  text-decoration: none;
 }
 
 a.btn-link:hover {
   color: #F1F0FF;
   text-decoration: underline;
 }
+
+/*input[type=submit] {
+  background: transparent;
+  border: none;
+  color: #F1F0FF; 
+  font-size: 20px;
+  padding: .5%;
+}*/
+
 
 .modal-header {
   background-color: rgba(166, 75, 154, 1);
@@ -232,4 +261,51 @@ a.btn-link:hover {
 
 button.close {
   font-size: 50px;
+}
+
+.col-thanks {
+  display: inline-block;
+  float: none;
+  border: 5px solid #F1F0FF;
+  margin-top: 5%;
+  height: 520px;
+  color: #F1F0FF;
+}
+
+.t {
+  border: none;
+  position: absolute;
+  bottom: -25px;
+  left: 37%;
+  background: #F1F0FF;
+  border-radius: 20px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.buttonload {
+    background-color: rgba(166, 75, 154, 1);
+    border: none; 
+    color: #F1F0FF;
+    padding: 12px 20px;
+    font-size: 16px 
+}
+
+#countdown {
+  visibility: hidden;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background: #443266;
+  display: inline-block;
+  top: 30px;
+  border: 2px solid white;
+  position: relative;
+  z-index: 100;
+  justify-content: space-around;
+  font-size: 70px;
+  color: #F1F0FF;
+  /*position: absolute;*/
 }

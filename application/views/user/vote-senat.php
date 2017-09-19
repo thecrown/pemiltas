@@ -7,10 +7,11 @@
 		<div class="col-md-11 line"></div>
 	</div>
 	<div class="row text-center">
-	<form action="" method="POST">
+	<form action="<?php echo base_url('user/review');?>" method="POST">
 	<?php for ($i=1; $i<5; $i++) { ?>
 	<div class="col-vote col-md-2">
 		<div class="row text-center" style="background: rgba(166, 75, 154, 1);">
+			<input type="hidden" name="paslonbem" value="<?php echo $this->session->userdata('bem'); ?>">
 			<input type="radio" class="option-input radio" name="senator" data-checked="<?php echo $i; ?>" value="<?php echo $i; ?>" data-toggle="tooltip" id="radio-vote"/>
 		</div>
 		<div class="row ava-container">
@@ -29,17 +30,17 @@
 		</div>
 	</div>
 	<?php } ?>
-	</form>
-	</div>
+	
 
 	<div class="row text-center">
 		<div class="col-md-3 line"></div>
 		<div class="col-md-5 line transparent">
-			<a href="" class="btn btn-md"><strong>Lanjut &raquo;</strong></a>
+			<input type="submit" name="fsenat" class="btn btn-link" value="Lanjut &raquo;">
 		</div>
 		<div class="col-md-3 line"></div>
 	</div>
-
+	</form>
+	</div>
 	<div class="row text-center">
 		<!-- <div class="col-md-3 line"></div> -->
 		<div class="col-md-11 line footer">

@@ -8,7 +8,13 @@
 		<div class="col-md-11 line"></div>
 	</div>
 	<div class="row text-center vote-container">
-	<form action="" method="POST">
+	<form action="<?php 
+			$list_senator = array("2015", "2016", "2017");
+			if (!in_array($angkatan, $list_senator)) {
+				echo base_url('user/review');
+			} else {
+				echo base_url('user/vote-senat');
+			}?>" method="POST">
 	<?php for ($i=1; $i<4; $i++) { ?>
 	<div class="col-vote col-md-3">
 		<div class="row text-center" style="background: rgba(166, 75, 154, 1);">
@@ -34,24 +40,17 @@
 		</div>
 	</div>
 	<?php } ?>
-	</form>
-	</div>
+	
 
 	<div class="row text-center">
 		<div class="col-md-3 line"></div>
 		<div class="col-md-5 line transparent">
-			<a href="<?php 
-			$list_senator = array("2015", "2016", "2017");
-			if (!in_array($angkatan, $list_senator)) {
-				echo base_url('user/review');
-			} else {
-				echo base_url('user/senat')."/$angkatan";
-			}?>" 
-				class="btn btn-md"><strong>Lanjut &raquo;</strong></a>
+			<input type="submit" name="fbem" class="btn btn-link" value="Lanjut &raquo;">
 		</div>
 		<div class="col-md-3 line"></div>
 	</div>
-
+	</form>
+	</div>
 	<div class="row text-center">
 		<!-- <div class="col-md-3 line"></div> -->
 		<div class="col-md-11 line footer">
