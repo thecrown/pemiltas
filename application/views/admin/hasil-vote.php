@@ -794,9 +794,9 @@
      * BAR CHART
      * ---------
      */
-    <?php $a=100; ?>
+    <?php $a=$no1;$b=$no2; $c=$no3;$d=$no4 ?>
     var bar_data1 = {
-      data: [["No Urut 1", <?php echo $a; ?>], ["No Urut 2", 8], ["No Urut 3", 4], ["No Urut 4", 30]],
+      data: [["No Urut 1", <?php echo $a; ?>], ["No Urut 2", <?php echo $b; ?>], ["No Urut 3", <?php echo $c; ?>], ["No Urut 4", <?php echo $d; ?>]],
       color: "#FB8C00"
     };
     $.plot("#bar-chart1-bem", [bar_data1], {
@@ -823,9 +823,9 @@
      * BAR CHART
      * ---------
      */
-     <?php $a=100; ?>
+     <?php $as=$nos1;$bs=$nos2; $cs=$nos3;$ds=$nos4 ?>
     var bar_data2 = {
-      data: [["No Urut 1", <?php echo $a; ?>], ["No Urut 2", 8], ["No Urut 3", 4], ["No Urut 4", 4]],
+      data: [["No Urut 1", <?php echo $as; ?>], ["No Urut 2", <?php echo $bs; ?>], ["No Urut 3", <?php echo $cs; ?>], ["No Urut 4", <?php echo $ds; ?>]],
       color: "#1976D2"
     };
     $.plot("#bar-chart2-senat", [bar_data2], {

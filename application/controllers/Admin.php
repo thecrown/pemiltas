@@ -31,7 +31,16 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/daftar-kandidat-senat',$data);
 	}
 	public function hitung_vote(){
-		$data['kandidat'] = $this->Admin_model->kandidat_senat(); 
+		$data['no1']=$this->Admin_model->hitung_bem_1();
+		$data['no2']=$this->Admin_model->hitung_bem_2();
+		$data['no3']=$this->Admin_model->hitung_bem_3();
+		$data['no4']=$this->Admin_model->hitung_bem_4();
+		$data['nos1']=$this->Admin_model->hitung_senat_1();
+		$data['nos2']=$this->Admin_model->hitung_senat_2();
+		$data['nos3']=$this->Admin_model->hitung_senat_3();
+		$data['nos4']=$this->Admin_model->hitung_senat_4();				
 		$this->load->view('admin/hasil-vote',$data);
+		// echo $data;
+		// var_dump($data);
 	}
 }
