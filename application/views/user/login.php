@@ -94,14 +94,20 @@ $(document).ready(function(){
 	
 	$('input[type=password]').focus(function() {
 		$('#pswd_info').show();
+		$(this).data('placeholder',$(this).attr('placeholder'))
+          .attr('placeholder','');
 	}).blur(function() {
 		$('#pswd_info').hide();
+		$(this).attr('placeholder',$(this).data('placeholder'));
 	});
 
 	$('input[type=text]').focus(function() {
 		$('#uname_info').show();
+		$(this).data('placeholder',$(this).attr('placeholder'))
+          .attr('placeholder','');
 	}).blur(function() {
 		$('#uname_info').hide();
+		$(this).attr('placeholder',$(this).data('placeholder'));
 	});
 	
 });

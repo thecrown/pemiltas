@@ -14,6 +14,7 @@
 		<div class="col-md-11 line"></div>
 	</div>
 	<div class="row text-center vote-container">
+	<h2 style="color: #F1F0FF;">Anda memilih</h2>
 	<form action="" method="POST">
 	<div class="col-vote col-md-3">
 		<div class="row text-center" style="background: rgba(166, 75, 154, 1);">

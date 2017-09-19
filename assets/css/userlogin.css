@@ -124,35 +124,6 @@
 #pswd_info, #uname_info {
     display:none;
 }
-/*#pswd_info h4{
-    background: black none repeat scroll 0 0;
-    display: block;
-    font-size: 14px;
-    letter-spacing: 0;
-    padding: 17px 0;
-    text-align: center;
-    text-transform: uppercase;
-}
-#pswd_info ul {
-    list-style: outside none none;
-}
-#pswd_info ul li {
-   padding: 10px 45px;
-}
-
-.valid {
-	background: rgba(0, 0, 0, 0) url("https://s19.postimg.org/vq43s2wib/valid.png") no-repeat scroll 2px 6px;
-	color: green;
-	line-height: 21px;
-	padding-left: 22px;
-}
-
-.invalid {
-	background: rgba(0, 0, 0, 0) url("https://s19.postimg.org/olmaj1p8z/invalid.png") no-repeat scroll 2px 6px;
-	color: red;
-	line-height: 21px;
-	padding-left: 22px;
-}*/
 
 .form-footer {
 	margin: 450px auto;
