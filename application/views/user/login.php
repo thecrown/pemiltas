@@ -30,14 +30,17 @@
 					<h1>Selamat Datang!</h1>
 					<p>Silahkan login untuk vote</p>
 				</div>
-				<form action="" class="loginForm">
+				<form action="<?php echo base_url("user/vote-bem"); ?>" class="loginForm" method="POST">
 					<div class="input-group">
-						<input type="text" id="name" class="form-control" placeholder="Pengguna">
+						<input type="text" id="name" name="nim" class="form-control" placeholder="Pengguna" required>
 					</div>
 					<div class="input-group">
-						<input type="password" id="paw" class="form-control" placeholder="Kata Sandi">
+						<input type="password" id="paw" name="token" class="form-control" placeholder="Kata Sandi" required>
 					</div>
-					<input type="submit" id="submit" class="form-control" value="Masuk">
+					<div>
+						<?php echo $this->session->flashdata('err_user'); ?>
+					</div>
+					<input type="submit" id="submit" name="userlogin" class="form-control" value="Masuk">
 				</form>
 			</div>
 		</div>

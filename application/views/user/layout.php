@@ -3,12 +3,12 @@
 		$waktu = $data['waktu'];
 	}
 
-	// $data['nama'] 		= $this->session->userdata('nama');
-	// $data['nim']		= $this->session->userdata('nim');
-	// $data['angkatan']	= $this->session->userdata('angkatan');
-	$data['nama'] = 'Amri Luthfi';
-	$data['nim'] = '21120114130060';
-	$data['angkatan'] = '2016';
+	$data['nama'] 		= $this->session->userdata('nama');
+	$data['nim']		= $this->session->userdata('nim');
+	$data['angkatan']	= $this->session->userdata('angkatan');
+	// $data['nama'] = 'Amri Luthfi';
+	// $data['nim'] = '21120114130060';
+	// $data['angkatan'] = '2016';
 ?>
 
 <!DOCTYPE html>

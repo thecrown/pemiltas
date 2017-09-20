@@ -41,7 +41,7 @@
         }
 
         setTimeout(function(){
-	        window.location.href = "<?php echo base_url()."login"; ?>";
+	        window.location.href = "<?php echo base_url('user/logout'); ?>";
 	    }, x*1000);
     }
 </script>

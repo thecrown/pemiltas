@@ -45,6 +45,29 @@ class User extends CI_Controller {
 		}
 	}
 
+	public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Auth');
+
+        if ( ($this->session->userdata('nim') && $this->session->userdata('token')) == NULL) {
+        	$array = array(
+	        	'nim' 	=> $this->input->post('nim'),
+	        	'token' => $this->input->post('token') 
+	        );
+	        
+	        $this->session->set_userdata( $array );
+        }
+
+        $nim 	= $this->session->userdata('nim');
+	    $token	= $this->session->userdata('token');
+
+        $this->Auth->voterAuth($nim, $token);
+
+        if($this->Auth->isVoter() == FALSE){
+        	redirect('login');
+        }
+    }
 
 
 	public function index()
@@ -52,18 +75,20 @@ class User extends CI_Controller {
 		$this->load->view('user/layout');
 	}
 
-	public function login()
-	{
-		$this->load->view('user/login');
-	}
+	// public function login()
+	// {
+	// 	$this->load->view('user/login');
+	// }
 
 	public function bem() 
 	{
-		$voted = array(
-			'bem' 	=> $this->session->userdata('bem'),
-			'senat' => $this->session->userdata('senat')
-		);
-		$this->session->unset_userdata($voted);
+        if (($this->session->userdata('bem') || $this->session->userdata('senat')) !== NULL) {
+			$voted = array(
+				'bem' 	=> $this->session->userdata('bem'),
+				'senat' => $this->session->userdata('senat')
+			);
+			$this->session->unset_userdata($voted);
+		}
 
 		$data['waktu'] 	= $this->greeting_msg();
 		$data['view']	= 'vote-bem';
@@ -105,6 +130,10 @@ class User extends CI_Controller {
 		$this->load->view('user/layout', $data);
 	}
 
+	public function logout(){
+		$this->session->sess_destroy();
+		redirect('login');
+	}
 
 
 	

@@ -50,7 +50,7 @@
 					<li>Mengandung spesial karakter (misal @ !)</li>
 				</ul>
 			</label>
-
+			<?php echo $this->session->flashdata('err_admin'); ?>
 			<input type="submit" value="Masuk">
 
 		</form>
