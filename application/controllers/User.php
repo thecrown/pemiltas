@@ -48,9 +48,12 @@ class User extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
+        $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
+		$this->output->set_header("Pragma: no-cache");
+
         $this->load->model('Auth');
 
-        if ( ($this->session->userdata('nim') && $this->session->userdata('token')) == NULL) {
+        if ( ($this->session->userdata('nim') || $this->session->userdata('token')) == NULL) {
         	$array = array(
 	        	'nim' 	=> $this->input->post('nim'),
 	        	'token' => $this->input->post('token') 
@@ -62,6 +65,7 @@ class User extends CI_Controller {
         $nim 	= $this->session->userdata('nim');
 	    $token	= $this->session->userdata('token');
 
+	    // die($nim);
         $this->Auth->voterAuth($nim, $token);
 
         if($this->Auth->isVoter() == FALSE){
@@ -130,11 +134,4 @@ class User extends CI_Controller {
 		$this->load->view('user/layout', $data);
 	}
 
-	public function logout(){
-		$this->session->sess_destroy();
-		redirect('login');
-	}
-
-
-	
 }

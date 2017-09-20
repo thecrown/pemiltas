@@ -57,6 +57,6 @@ $route['user/vote-bem'] = 'user/bem';
 $route['user/vote-senat'] = 'user/senat';
 $route['user/vote-review'] = 'user/review';
 $route['user/thanks'] = 'user/thanks';
-$route['user/logout'] = 'user/logout';
+$route['logout'] = 'login/logout';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

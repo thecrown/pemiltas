@@ -8,7 +8,7 @@
 <div class="container-fluid">
 	<div class="vote-title text-center">
 		<h2>Vote Review <br>Periksa Kembali Pilihan Anda</h2>
-		<p><?php echo "$waktu, $nama ($nim)"; ?> |<a href="" class="btn btn-link" data-toggle="modal" data-target="#myModal">Petunjuk</a> |<a href="<?php echo base_url('user/logout'); ?>" class="btn btn-link">Keluar</a></p>
+		<p><?php echo "$waktu, $nama ($nim)"; ?> |<a href="" class="btn btn-link" data-toggle="modal" data-target="#myModal">Petunjuk</a> |<a href="<?php echo base_url('logout'); ?>" class="btn btn-link">Keluar</a></p>
 	</div>
 	<div class="row text-center">		
 		<div class="col-md-11 line"></div>
