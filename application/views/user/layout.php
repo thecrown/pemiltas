@@ -40,8 +40,6 @@
 	<!-- Modal -->
 	<div id="myModal" class="modal fade" role="dialog">
 	  <div class="modal-dialog">
-
-	    <!-- Modal content-->
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -57,7 +55,25 @@
 			</ol>
 	      </div>
 	    </div>
+	  </div>
+	</div>
 
+	<div id="exitModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+	        <h2 class="modal-title">Keluar dari Sistem</h2>
+	      </div>
+	      <div class="modal-body">
+	      	<h3>Data Anda belum tersimpan, Yakin ingin keluar dari sistem ?</h3>
+	      </div>
+	      <div class="modal-footer">
+	      	<a href="<?php echo base_url('logout'); ?>" class="btn btn-danger pull-right">Iya</a>
+	        <a class="btn btn-info pull-right" data-dismiss="modal">Tidak</a>
+	      </div>
+	    </div>
 	  </div>
 	</div>
 

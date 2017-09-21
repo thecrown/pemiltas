@@ -249,10 +249,16 @@ a.btn-link:hover {
 
 .modal-header {
   background-color: rgba(166, 75, 154, 1);
+  color: #F1F0FF;
 }
 
-.modal-body {
+.modal-body, .modal-footer {
   background-color: rgba(166, 75, 154, .8);
+  color: #F1F0FF;
+}
+
+.modal-footer {
+  border: none;
 }
 
 .modal-body ol {
@@ -324,4 +330,8 @@ button.close {
   font-size: 70px;
   color: #F1F0FF;
   /*position: absolute;*/
+}
+
+a.pull-right {
+  margin-right: 10px;
 }

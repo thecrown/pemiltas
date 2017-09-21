@@ -27,7 +27,7 @@ class Auth extends CI_Model {
 	  		if ($token != $user->password_pemilih){
 		  		$this->session->set_flashdata('err_user', '<div class="alert alert-danger alert-login" role="alert">Nama Pengguna atau Kata Sandi tidak sesuai.</div>');
 		  		redirect('login');
-		  	} elseif ($user->status == ('sudah' || 'Sudah' || 'SUDAH')){
+		  	} elseif ($user->status == 'Sudah') {
 		  		$this->session->set_flashdata('err_user', '<div class="alert alert-danger alert-login" role="alert">Maaf, Anda hanya diijinkan memilih sebanyak 1 kali</div>');
 		  		redirect('login');
 		  	}else {
@@ -44,18 +44,20 @@ class Auth extends CI_Model {
 	}
 
 	public function adminAuth($uname, $pass){
-		$query = $this->db->get_where('admin', array('idadmin' => $uname))->result_array();
+		$query = $this->db->get_where('admin', array('idadmin' => $uname));
 
 		if ($query->num_rows() < 1){
 	  		$this->session->set_flashdata('err_admin', '<div class="alert alert-danger alert-login" role="alert">Akun yang Anda masukkan tidak terdaftar.</div>');
+	  		redirect('dashboard/login');
 	  	} else {
 	  		$admin = $query->row();
 
 	  		if ($pass != $admin->password_admin){
 		  		$this->session->set_flashdata('err_admin', '<div class="alert alert-danger alert-login" role="alert">Nama Pengguna atau Kata Sandi tidak sesuai.</div>');
+		  		redirect('dashboard/login');
 		  	} else {
 		  		$array = array(
-		  			'voterlogin' 	=> TRUE
+		  			'adminlogin' 	=> TRUE
 		  		);
 
 				$this->session->set_userdata($array);
