@@ -64,6 +64,7 @@ $route['tambah-bem'] = 'admin/add_kandidat_bem';
 $route['kandidat-ketua'] = 'admin/valid_ketua_bem';
 $route['hitung-vote'] = 'admin/hitung_vote';
 $route['kandidat-senat'] = 'admin/daftar_kandidat_senat';
+$route['dashboard/logout'] = 'login/admlogout';
 
 // user
 $route['login'] = 'login/user';
