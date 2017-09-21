@@ -31,6 +31,13 @@ class Login extends CI_Controller {
 		$this->session->sess_destroy();
 		redirect('login');
 	}
+
+	public function admlogout(){
+		$this->session->all_userdata();
+		$this->session->sess_destroy();
+		redirect('dashboard/login');
+	}
+
 }
 
 /* End of file Login.php */

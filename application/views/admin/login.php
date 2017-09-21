@@ -28,7 +28,7 @@
 
 			<label for="username">
 				<!-- <span>Username</span> -->
-				
+
 				<input type="text" id="username" minlength="3" required placeholder="Nama Pengguna" name="uname">
 
 				<ul class="input-requirements">
@@ -39,7 +39,7 @@
 
 			<label for="password">
 				<!-- <span>Password</span> -->
-				
+        
 				<input type="password" id="password" maxlength="100" minlength="8" required placeholder="Kata Sandi" name="pass">
 
 				<ul class="input-requirements">
