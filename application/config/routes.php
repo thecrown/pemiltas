@@ -50,8 +50,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'welcome';
+// admin
 $route['dashboard'] = 'admin';
 $route['dashboard/login'] = 'login/admin';
+$route['daftar-pemilih'] = 'admin/daftar_pemilih';
+$route['tambah-pemilih'] = 'admin/add_pemilih';
+$route['valid-pemilih'] = 'admin/valid_pemilih';
+$route['hapus-pemilih/(:num)'] = 'admin/delete_pemilih/$1';
+$route['pemilih-update/(:num)'] = 'admin/valid_update/$1';
+$route['update-pemilih/(:num)'] = 'admin/update_pemilih/$1';
+$route['kandidat-bem'] = 'admin/daftar_kandidat_bem';
+$route['tambah-bem'] = 'admin/add_kandidat_bem';
+$route['kandidat-ketua'] = 'admin/valid_ketua_bem';
+$route['hitung-vote'] = 'admin/hitung_vote';
+$route['kandidat-senat'] = 'admin/daftar_kandidat_senat';
+
+// user
 $route['login'] = 'login/user';
 $route['user/vote-bem'] = 'user/bem';
 $route['user/vote-senat'] = 'user/senat';
