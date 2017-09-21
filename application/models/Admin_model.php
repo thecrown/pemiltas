@@ -94,7 +94,66 @@ class Admin_model extends CI_Model {
             return false;
         }
     }
+    //hapus kandidat bem
+    public function hapus_kandidat_bem($id){
+        $where = array(
+            'idkandidat_BEM'=>$id
+        );
+        $query = $this->db->delete('kandidat_bem',$where);
+        if($query==true){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function get_update_ketua_bem($id){
+        $where = array(
+            'idkandidat_BEM'=>$id
+        );
+        $query = $this->db->get_where('kandidat_bem',$where);
+        if($query->num_rows()>0)
+        {
+            return $query->result_array();
+        }else{
+            return false;
+        }
+    }
+    public function update_ketua_bem($data,$id){
+        $where = array(
+            'idkandidat_BEM'=>$id
+        );
 
+        $query = $this->db->update('kandidat_bem',$data,$where);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function get_update_wakil_bem($id){
+        $where = array(
+            'idkandidat_BEM'=>$id
+        );
+        $query = $this->db->get_where('kandidat_bem',$where);
+        if($query->num_rows()>0)
+        {
+            return $query->result_array();
+        }else{
+            return false;
+        }
+    }
+    public function update_wakil_bem($data,$id){
+        $where =array(
+            'idkandidat_BEM'=>$id
+        );
+        $query = $this->db->update('kandidat_bem',$data,$where);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    //liat daftar senat
     public function kandidat_senat(){
         $query =$this->db->get('kandidat_senat');
         if($query->num_rows()>=1){

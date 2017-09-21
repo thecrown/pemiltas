@@ -108,14 +108,14 @@ class Admin extends CI_Controller {
 		$data['kandidat'] = $this->Admin_model->kandidat_bem(); 
 		$this->load->view('admin/daftar-kandidat-bem',$data);
 	}
-	public function hapus_kandidat_bem(){
-		$query = $this->admin_model->hapus_kandidat_bem();
+	public function hapus_kandidat_bem($id=null){
+		$query = $this->Admin_model->hapus_kandidat_bem($id);
 		if($query==false){
 			$this->daftar_kandidat_bem();
 		}else{
 			$data['error']="Data already Deleted";
-			$data['pemilih'] = $this->Admin_model->daftar_pemilih(); 
-			$this->load->view('admin/daftar_pemilih',$data);
+			$data['kandidat'] = $this->Admin_model->kandidat_bem(); 
+			$this->load->view('admin/daftar-kandidat-bem',$data);
 		}
 	}
 	//fungsi untuk kandidat ketua BEM
@@ -238,7 +238,132 @@ class Admin extends CI_Controller {
 					}
 			}
 	}
-	
+	//fungsi untuk edit ketua BEM
+	public function update_ketua_bem($id=null){
+		$data['ketua'] = $this->Admin_model->get_update_ketua_bem($id); 
+		$this->load->view('admin/update-ketua-bem',$data);
+	}
+	public function valid_update_ketua_bem($id){
+		
+		$this->form_validation->set_rules('no_urut','No urut','xss_clean|trim|required|numeric');
+		$this->form_validation->set_rules('nama_ketua','Nama Ketua','xss_clean|trim|required');
+		$this->form_validation->set_rules('angkatan','Angkatan','xss_clean|trim|required');
+
+		$no_urut = $this->input->post('no_urut');
+		$nama_ketua = $this->input->post('nama_ketua');
+		$angkatan = $this->input->post('angkatan');
+		
+			$config['upload_path'] 		= './assets/img/bem/';
+			$config['allowed_types'] 	= 'jpg|jpeg|pdf|png|PNG';
+			$config['max_size'] 		= 200048;
+			$config['overwrite']		= TRUE;
+
+			$config['file_name'] = url_title("kabem".$no_urut);
+			$this->upload->initialize($config);
+
+			if($this->upload->do_upload('foto_ketua')){
+				$upload_data = $this->upload->data(); 
+				$file_name = $upload_data['file_name'];
+				
+				$config2['image_library'] = 'gd2';
+				$config2['source_image'] = $this->upload->upload_path.$this->upload->file_name;
+				$config2['maintain_ratio'] = TRUE;
+				$config2['width'] = 200;
+				$config2['height'] = 350;
+				
+				$this->load->library('image_lib',$config2);
+				$this->image_lib->clear();
+				$this->image_lib->initialize($config2);
+				$this->image_lib->resize();
+
+			}else{
+				echo "gagal upload foto & data";
+			}
+			
+			if($this->form_validation->run()==false){
+				$data['error'] = validation_errors();
+				$data['ketua'] = $this->Admin_model->get_update_ketua_bem($id); 
+				$this->load->view('admin/update-ketua-bem',$data);
+				
+			}else{
+					$data=array(
+					'no_urut'=>$no_urut,
+					'nama_ketua'=>$nama_ketua,
+					'angkatan'=>$angkatan,
+					'foto_ketua'=>$file_name
+					);
+					$datas = $this->Admin_model->update_ketua_bem($data,$id);
+					if($datas){
+						redirect('kandidat-bem');
+					}else{
+						$data['error'] = "Data Failure Upload";
+						$data['ketua'] = $this->Admin_model->get_update_ketua_bem($id); 
+						$this->load->view('admin/update-ketua-bem',$data);
+					}
+			}
+		
+	}
+	public function update_wakil_bem($id=null){
+		$data['wakil'] = $this->Admin_model->get_update_wakil_bem($id); 
+		$this->load->view('admin/update-wakil-bem',$data);
+	}
+	public function valid_update_wakil_bem($id){
+		
+		
+		$this->form_validation->set_rules('no_urut','No urut','xss_clean|trim|required|numeric');
+		$this->form_validation->set_rules('nama_wakil','Nama Ketua','xss_clean|trim|required');
+
+		$no_urut = $this->input->post('no_urut');
+		$nama_ketua = $this->input->post('nama_wakil');
+		
+		
+			$config['upload_path'] 		= './assets/img/bem/';
+			$config['allowed_types'] 	= 'jpg|jpeg|png|PNG';
+			$config['max_size'] 		= 200048;
+			$config['overwrite']		= TRUE;
+
+			$config['file_name'] = url_title("wakabem".$no_urut);
+			$this->upload->initialize($config);
+
+			if($this->upload->do_upload('foto_wakil')){
+				$upload_data = $this->upload->data(); 
+				$file_name = $upload_data['file_name'];
+				
+				$config2['image_library'] = 'gd2';
+				$config2['source_image'] = $this->upload->upload_path.$this->upload->file_name;
+				$config2['maintain_ratio'] = TRUE;
+				$config2['width'] = 200;
+				$config2['height'] = 350;
+				
+				$this->load->library('image_lib',$config2);
+				$this->image_lib->clear();
+				$this->image_lib->initialize($config2);
+				$this->image_lib->resize();
+
+			}else{
+				echo "gagal upload foto & data";
+			}
+			
+			if($this->form_validation->run()==false){
+				$data['error'] = validation_errors();
+				$data['wakil'] = $this->Admin_model->get_update_wakil_bem($id); 
+				$this->load->view('admin/update-wakil-bem',$data);
+				
+			}else{
+					$data=array(
+					'nama_wakil'=>$nama_ketua,
+					'foto_wakil'=>$file_name
+					);
+					$datas = $this->Admin_model->update_wakil_bem($data,$id);
+					if($datas){
+						redirect('kandidat-bem');
+					}else{
+						$data['error'] = "Data Failure Upload";
+						$data['wakil'] = $this->Admin_model->get_update_wakil_bem($id); 
+						$this->load->view('admin/update-wakil-bem',$data);
+					}
+			}
+	}
 	
 	public function daftar_kandidat_senat(){
 		$data['kandidat'] = $this->Admin_model->kandidat_senat(); 

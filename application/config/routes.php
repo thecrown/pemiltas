@@ -69,6 +69,10 @@ $route['tambah-wakil-bem'] = 'admin/add_kandidat_bem_wakil';
 $route['kandidat-ketua'] = 'admin/valid_ketua_bem';
 $route['kandidat-wakil'] = 'admin/valid_wakil_bem';
 $route['hapus-kandidat/(:num)'] = 'admin/hapus_kandidat_bem/$1';
+$route['update-ketua-bem/(:num)'] = 'admin/update_ketua_bem/$1';
+$route['update-kandidat-ketua/(:num)'] = 'admin/valid_update_ketua_bem/$1';
+$route['update-wakil-bem/(:num)'] = 'admin/update_wakil_bem/$1';
+$route['update-kandidat-wakil/(:num)'] = 'admin/valid_update_wakil_bem/$1';
 
 
 $route['hitung-vote'] = 'admin/hitung_vote';
