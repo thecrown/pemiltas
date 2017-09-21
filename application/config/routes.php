@@ -53,6 +53,7 @@ $route['default_controller'] = 'welcome';
 // admin
 $route['dashboard'] = 'admin';
 $route['dashboard/login'] = 'login/admin';
+$route['dashboard/logout'] = 'login/admlogout';
 
 $route['daftar-pemilih'] = 'admin/daftar_pemilih';
 $route['tambah-pemilih'] = 'admin/add_pemilih';

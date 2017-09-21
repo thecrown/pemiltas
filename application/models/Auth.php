@@ -44,7 +44,7 @@ class Auth extends CI_Model {
 	}
 
 	public function adminAuth($uname, $pass){
-		$query = $this->db->get_where('admin', array('idadmin' => $uname));
+		$query = $this->db->get_where('admin', array('username_admin' => $uname));
 
 		if ($query->num_rows() < 1){
 	  		$this->session->set_flashdata('err_admin', '<div class="alert alert-danger alert-login" role="alert">Akun yang Anda masukkan tidak terdaftar.</div>');
@@ -52,7 +52,7 @@ class Auth extends CI_Model {
 	  	} else {
 	  		$admin = $query->row();
 
-	  		if ($pass != $admin->password_admin){
+	  		if (md5(md5($pass)) != $admin->password_admin){
 		  		$this->session->set_flashdata('err_admin', '<div class="alert alert-danger alert-login" role="alert">Nama Pengguna atau Kata Sandi tidak sesuai.</div>');
 		  		redirect('dashboard/login');
 		  	} else {
