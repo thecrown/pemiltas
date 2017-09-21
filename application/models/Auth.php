@@ -24,10 +24,13 @@ class Auth extends CI_Model {
 	  		redirect('login');
 	  	} else {
 	  		$user = $query->row();
-
 	  		if ($token != $user->password_pemilih){
 		  		$this->session->set_flashdata('err_user', '<div class="alert alert-danger alert-login" role="alert">Nama Pengguna atau Kata Sandi tidak sesuai.</div>');
-		  	} else {
+		  		redirect('login');
+		  	} elseif ($user->status == ('sudah' || 'Sudah' || 'SUDAH')){
+		  		$this->session->set_flashdata('err_user', '<div class="alert alert-danger alert-login" role="alert">Maaf, Anda hanya diijinkan memilih sebanyak 1 kali</div>');
+		  		redirect('login');
+		  	}else {
 		  		$array = array(
 		  			'voterlogin' 	=> TRUE,
 		  			'nama'			=> $user->nama_pemilih,

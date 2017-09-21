@@ -28,9 +28,7 @@
             document.getElementById("countdown").innerHTML = x;
             r = setTimeout("countdown()",1000);
 
-            document.getElementById("mybtn").onclick = function() {
-                document.getElementById("mybtn").disabled = "disabled";
-            };
+            document.getElementById("mybtn").setAttribute('disabled', 'disabled');
             document.getElementById("countdown").style.visibility = "visible";
             document.getElementById("mybtn").innerHTML = "Mohon Tunggu ...";
         }

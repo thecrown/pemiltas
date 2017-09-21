@@ -37,11 +37,13 @@
 					<div class="input-group">
 						<input type="password" id="paw" name="token" class="form-control" placeholder="Kata Sandi" required>
 					</div>
-					<div>
-						<?php echo $this->session->flashdata('err_user'); ?>
-					</div>
+					<?php echo $this->session->flashdata('err_user'); ?>
 					<input type="submit" id="submit" name="userlogin" class="form-control" value="Masuk">
 				</form>
+				<hr>
+				<div class="form-footer">
+					<h4>&copy; Pemiltas FKM 2017 |<button class="btn-link" data-toggle="modal" data-target="#myModal">Petunjuk</button></h4>
+				</div>
 			</div>
 		</div>
 		<div class="col-md-4">
@@ -56,11 +58,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-4 col-md-offset-4 text-center">
-			<div class="form-footer">
-				<h4>&copy; Pemiltas FKM 2017 |<button class="btn-link" data-toggle="modal" data-target="#myModal">Petunjuk</button></h4>
-			</div>
-		</div>
+		
 	</div>
 	<!-- Modal -->
 	<div id="myModal" class="modal fade" role="dialog">

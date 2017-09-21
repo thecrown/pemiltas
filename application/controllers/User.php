@@ -128,6 +128,14 @@ class User extends CI_Controller {
 	}
 
 	public function thanks() {
+
+		$nim	= $this->session->userdata('nim');
+		$bem 	= $this->session->userdata('bem');
+		$senat 	= $this->session->userdata('senat');
+
+		$this->load->model('User_model');
+		$this->User_model->voting($nim, $bem, $senat);
+
 		$data['waktu'] = $this->greeting_msg();
 		$data['view']	= 'thanks-msg';
 		$data['title']	= 'Thank You';

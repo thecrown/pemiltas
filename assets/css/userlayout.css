@@ -293,6 +293,22 @@ button.close {
     font-size: 16px 
 }
 
+.buttonload:hover {
+  text-decoration: none;
+  color: #F1F0FF;
+}
+
+.buttonload:disabled {
+  background: transparent;
+  border: 2px solid #F1F0FF;
+  color: #F1F0FF;
+  cursor: not-allowed;
+}
+
+.buttonload:disabled:hover {
+  color: #F1F0FF;
+}
+
 #countdown {
   visibility: hidden;
   height: 100px;
