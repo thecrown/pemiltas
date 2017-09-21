@@ -364,10 +364,142 @@ class Admin extends CI_Controller {
 					}
 			}
 	}
-	
+	//fungsi untuk senat
 	public function daftar_kandidat_senat(){
 		$data['kandidat'] = $this->Admin_model->kandidat_senat(); 
 		$this->load->view('admin/daftar-kandidat-senat',$data);
+	}
+	public function add_kandidat_senat(){
+		$data['error'] = validation_errors();
+		$this->load->view('admin/add-kandidat-senat',$data);
+	}
+	public function valid_senat(){
+		$this->form_validation->set_rules('no_urut','No urut','xss_clean|trim|required|numeric');
+		$this->form_validation->set_rules('nama','Nama Kandidat','xss_clean|trim|required');
+		$this->form_validation->set_rules('angkatan','Angkatan','xss_clean|trim|required');
+
+		$no_urut = $this->input->post('no_urut');
+		$nama = $this->input->post('nama');
+		$angkatan = $this->input->post('angkatan');
+		
+			$config['upload_path'] 		= './assets/img/senat/'.$angkatan;
+			$config['allowed_types'] 	= 'jpg|jpeg|pdf|png|PNG';
+			$config['max_size'] 		= 200048;
+			$config['overwrite']		= TRUE;
+
+			$config['file_name'] = url_title("senat".$no_urut);
+			$this->upload->initialize($config);
+
+			if($this->upload->do_upload('foto_file')){
+				$upload_data = $this->upload->data(); 
+				$file_name = $upload_data['file_name'];
+				
+				$config2['image_library'] = 'gd2';
+				$config2['source_image'] = $this->upload->upload_path.$this->upload->file_name;
+				$config2['maintain_ratio'] = TRUE;
+				$config2['width'] = 200;
+				$config2['height'] = 350;
+				
+				$this->load->library('image_lib',$config2);
+				$this->image_lib->clear();
+				$this->image_lib->initialize($config2);
+				$this->image_lib->resize();
+
+			}else{
+				echo "gagal upload foto & data";
+			}
+			
+			if($this->form_validation->run()==false){
+				$data['error'] = validation_errors();
+				$this->load->view('admin/add-kandidat-senat',$data);
+				
+			}else{
+					$data=array(
+					'no_urut'=>$no_urut,
+					'nama_kandidat'=>$nama,
+					'angkatan'=>$angkatan,
+					'foto'=>$file_name
+					);
+					$datas = $this->Admin_model->insert_senat($data);
+					if($datas){
+						redirect('kandidat-senat');
+					}else{
+						$data['error'] = "Data Failure Upload";
+						$this->load->view('admin/add-kandidat-senat',$data);
+					}
+			}
+	}
+	public function hapus_senat($id=null){
+		$query = $this->Admin_model->hapus_senat($id);
+		if($query==false){
+			$this->daftar_kandidat_senat();
+		}else{
+			$data['error']="Data already Deleted";
+			$data['kandidat'] = $this->Admin_model->kandidat_senat(); 
+			$this->load->view('admin/daftar-kandidat-senat',$data);
+		}
+	}
+	public function update_senat($id=null){
+		$data['senat'] = $this->Admin_model->get_update_senat($id); 
+		$this->load->view('admin/update-senat',$data);
+	}
+	public function valid_update_senat($id){
+		$this->form_validation->set_rules('no_urut','No urut','xss_clean|trim|required|numeric');
+		$this->form_validation->set_rules('nama','Nama Kandidat','xss_clean|trim|required');
+		$this->form_validation->set_rules('angkatan','Angkatan','xss_clean|trim|required');
+
+		$no_urut = $this->input->post('no_urut');
+		$nama = $this->input->post('nama');
+		$angkatan = $this->input->post('angkatan');
+		
+			$config['upload_path'] 		= './assets/img/senat/'.$angkatan;
+			$config['allowed_types'] 	= 'jpg|jpeg|pdf|png|PNG';
+			$config['max_size'] 		= 200048;
+			$config['overwrite']		= TRUE;
+
+			$config['file_name'] = url_title("senat".$no_urut);
+			$this->upload->initialize($config);
+
+			if($this->upload->do_upload('foto_file')){
+				$upload_data = $this->upload->data(); 
+				$file_name = $upload_data['file_name'];
+				
+				$config2['image_library'] = 'gd2';
+				$config2['source_image'] = $this->upload->upload_path.$this->upload->file_name;
+				$config2['maintain_ratio'] = TRUE;
+				$config2['width'] = 200;
+				$config2['height'] = 350;
+				
+				$this->load->library('image_lib',$config2);
+				$this->image_lib->clear();
+				$this->image_lib->initialize($config2);
+				$this->image_lib->resize();
+
+			}else{
+				echo "gagal upload foto & data";
+			}
+			
+			if($this->form_validation->run()==false){
+				
+				$data['error'] = validation_errors();
+				$data['senat'] = $this->Admin_model->get_update_senat($id); 
+				$this->load->view('admin/update-senat',$data);
+				
+			}else{
+					$data=array(
+					'no_urut'=>$no_urut,
+					'nama_kandidat'=>$nama,
+					'angkatan'=>$angkatan,
+					'foto'=>$file_name
+					);
+					$datas = $this->Admin_model->update_senat($data,$id);
+					if($datas){
+						redirect('kandidat-senat');
+					}else{
+						$data['senat'] = $this->Admin_model->get_update_senat($id); 
+						$this->load->view('admin/update-senat',$data);
+					}
+			}
 	}
 	public function hitung_vote(){
 		$data['no1']=$this->Admin_model->hitung_bem_1();

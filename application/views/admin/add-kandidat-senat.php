@@ -3,22 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Data Tables</title>
+  <title>AdminLTE 2 | General Form Elements</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href="<?php echo base_url('assets');?>/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo base_url('assets'); ?>/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="<?php echo base_url('assets');?>/plugins/datatables/dataTables.bootstrap.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="<?php echo base_url('assets');?>/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="<?php echo base_url('assets'); ?>/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="<?php echo base_url('assets');?>/dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="<?php echo base_url('assets'); ?>/dist/css/skins/_all-skins.min.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -32,7 +30,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="<?php echo base_url('assets');?>/index2.html" class="logo">
+    <a href="../../index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -64,7 +62,7 @@
                   <li><!-- start message -->
                     <a href="#">
                       <div class="pull-left">
-                        <img src="<?php echo base_url('assets');?>/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="<?php echo base_url('assets'); ?>/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Support Team
@@ -77,7 +75,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="<?php echo base_url('assets');?>/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="<?php echo base_url('assets'); ?>/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         AdminLTE Design Team
@@ -89,7 +87,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="<?php echo base_url('assets');?>/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="<?php echo base_url('assets'); ?>/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Developers
@@ -101,7 +99,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="<?php echo base_url('assets');?>/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="<?php echo base_url('assets'); ?>/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Sales Department
@@ -113,7 +111,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="<?php echo base_url('assets');?>/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="<?php echo base_url('assets'); ?>/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Reviewers
@@ -247,13 +245,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="<?php echo base_url('assets');?>/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <img src="<?php echo base_url('assets'); ?>/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs">Alexander Pierce</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="<?php echo base_url('assets');?>/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="<?php echo base_url('assets'); ?>/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
                   Alexander Pierce - Web Developer
@@ -301,7 +299,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="<?php echo base_url('assets');?>/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="<?php echo base_url('assets'); ?>/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>Alexander Pierce</p>
@@ -330,8 +328,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('assets');?>/index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-            <li><a href="<?php echo base_url('assets');?>/index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+            <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+            <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -361,9 +359,9 @@
           <a href="#">
             <i class="fa fa-pie-chart"></i>
             <span>Charts</span>
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="../charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
@@ -376,9 +374,9 @@
           <a href="#">
             <i class="fa fa-laptop"></i>
             <span>UI Elements</span>
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="../UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
@@ -389,29 +387,29 @@
             <li><a href="../UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
           </ul>
         </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-edit"></i> <span>Forms</span>
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="../forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
-            <li><a href="../forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-            <li><a href="../forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
-          </ul>
-        </li>
         <li class="treeview active">
           <a href="#">
-            <i class="fa fa-table"></i> <span>Tables</span>
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
+            <i class="fa fa-edit"></i> <span>Forms</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-            <li class="active"><a href="data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
+            <li class="active"><a href="general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
+            <li><a href="advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
+            <li><a href="editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>Tables</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="../tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
+            <li><a href="../tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
           </ul>
         </li>
         <li>
@@ -436,9 +434,9 @@
         <li class="treeview">
           <a href="#">
             <i class="fa fa-folder"></i> <span>Examples</span>
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="../examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
@@ -455,9 +453,9 @@
         <li class="treeview">
           <a href="#">
             <i class="fa fa-share"></i> <span>Multilevel</span>
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
@@ -500,72 +498,117 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-      Daftar Kandidat Senat
+        Form Tambah Kandidat Senat
       </h1>
       <ol class="breadcrumb">
-        <li><a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active"><a href="<?php echo base_url('kandidat-senat'); ?>">Data Senat</a></li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active"><a href="<?php echo base_url('tambah-pemilih'); ?>">Tambah Pemilih</a></i></li>
       </ol>
     </section>
 
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <div class="col-xs-12">
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Daftar Kandidat Senat</h3>
+        <!-- left column -->
+        <div class="col-md-6">
+        <!-- ini untuk petunjuk penambahan  -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Tambah Kandidat Senat</h3>
             </div>
             <!-- /.box-header -->
-            <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                  <th>No Urut</th>
-                  <th>Nama Kandidat</th>
-                  <th>Angkatan</th>
-                  <th>Action</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php
-                ?>
-                
-                <?php if(isset($kandidat)){ ?>
-                <?php foreach($kandidat as $data){ ?>
-                    <tr>
-                    
-                    <td><?php echo $data['no_urut']; ?></td>
-                    <td><?php echo $data['nama_kandidat']; ?></td>
-                    <td><?php echo $data['angkatan']; ?></td>
-                    <td>
-                    <a href="<?php echo base_url('hapus-senat/').$data['idkandidat_senat'];?>"><button class="btn btn-danger"><i class="fa fa-trash bigicon"></i></button></a>
-                    &nbsp;&nbsp;&nbsp;
-                    <a href="<?php echo base_url('update-senat/').$data['idkandidat_senat'];?>"><button class="btn btn-primary"><i class="fa fa-upload bigicon"></i></button></a>
-                    </td>
-                    
-                  </tr>
-                  <?php } } ?>
-                  
-                
-                </tbody>
-                <tfoot>
-                <tr>
-                <th>No Urut</th>
-                <th>Nama Kandidat</th>
-                <th>Angkatan</th>
-                <th>Action</th>
-                </tr>
-                </tfoot>
-              </table>
-            </div>
-            <!-- /.box-body -->
+            <!-- form start -->
+            <?php echo form_open_multipart('senat-kandidat'); ?>
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">No urut :</label>
+                  <input type="text" class="form-control" name="no_urut" id="exampleInputEmail1" placeholder="Masukan No Urut">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Nama Kandidat :</label>
+                  <input type="text" class="form-control" name="nama" id="exampleInputPassword1" placeholder="Masukan Nama Ketua">
+                </div>
+                <div class="form-group">
+                  <label>Angaktan :</label>
+                    <select class="form-control" name="angkatan">
+                    <option value="">-Pilih Angkatan-</option> 
+                      <option value="2015">2015</option>
+                      <option value="2016">2016</option>
+                      <option value="2017">2017</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputFile">File Foto :</label>
+                  <input type="file" name="foto_file" id="exampleInputFile">
+                </div>
+              </div>
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+              
+            <?php echo form_close(); ?>
           </div>
-          <!-- /.box -->
+         
+
+
+          <!-- Input addon -->
+          <!-- <div class="box box-info">
+           
+            <div class="box-body">
+                <br>
+                <center>
+            <h3>Government of the people,</h3>
+            <h3>by the people,</h3>
+            <h3>for the people,</h3>
+            <h3>shall not perish from the Earth.</h3>
+            <h4>- Abraham Lincoln 1809 – 1865</h4>
+            </center>
+            </div>
+          </div> -->
+      <!-- untuk penunjuk tambah pemilih  -->
         </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
+        <div class="col-md-6">
+        <div class="box box-solid">
+          <div class="box-header with-border">
+            <i class="fa fa-text-width"></i>
+
+            <h3 class="box-title">Petunjuk Penambahan Pemilih</h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <ul>
+              <li>NIM :</li>
+                <ul>
+                  <li>NIM harus berupa Angka</li>
+                  <li>Panjang Angka maksimal 15 Digit</li>
+                  <li>Kolom NIM Tidak boleh Kosong</li>
+                </ul>
+                <li>Nama :</li>
+                <ul>
+                  <li>Nama berupa Huruf</li>
+                  <li>Kolom Nama Tidak boleh Kosong</li>
+                </ul>
+                <li>Angkatan :</li>
+                <ul>
+                  <li>Pilih Kolom Angkatan Sesuai data Pemilih</li>
+                  <li>Kolom Angkatan Tidak boleh Kosong</li>
+                </ul>
+                <li>Password :</li>
+                <ul>
+                  <li>Password berupa Token yang sudah Dibuat Panitia</li>
+                  <li>Password Tidak Boleh Kosong</li>
+                </ul>
+            </ul>
+          </div>
+          
+          <!-- /.box-body -->
+        </div>
+        <br>
+        <?php if(!empty($error)){
+                echo "<div class='alert alert-danger'> ".$error. "</div>";
+              } ?>
+       </div>
+      <!-- end tambah pemilih -->
     </section>
     <!-- /.content -->
   </div>
@@ -775,33 +818,14 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.3 -->
-<script src="<?php echo base_url('assets');?>/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="<?php echo base_url('assets'); ?>/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
-<script src="<?php echo base_url('assets');?>/bootstrap/js/bootstrap.min.js"></script>
-<!-- DataTables -->
-<script src="<?php echo base_url('assets');?>/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url('assets');?>/plugins/datatables/dataTables.bootstrap.min.js"></script>
-<!-- SlimScroll -->
-<script src="<?php echo base_url('assets');?>/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="<?php echo base_url('assets'); ?>/bootstrap/js/bootstrap.min.js"></script>
 <!-- FastClick -->
-<script src="<?php echo base_url('assets');?>/plugins/fastclick/fastclick.js"></script>
+<script src="<?php echo base_url('assets'); ?>/plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="<?php echo base_url('assets');?>/dist/js/app.min.js"></script>
+<script src="<?php echo base_url('assets'); ?>/dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="<?php echo base_url('assets');?>/dist/js/demo.js"></script>
-<!-- page script -->
-<script>
-  $(function () {
-    $("#example1").DataTable();
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false
-    });
-  });
-</script>
+<script src="<?php echo base_url('assets'); ?>/dist/js/demo.js"></script>
 </body>
 </html>

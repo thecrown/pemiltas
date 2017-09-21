@@ -156,8 +156,54 @@ class Admin_model extends CI_Model {
     //liat daftar senat
     public function kandidat_senat(){
         $query =$this->db->get('kandidat_senat');
-        if($query->num_rows()>=1){
+        if($query->num_rows()>=0){
             return $query->result_array();
+        }else{
+            return false;
+        }
+    }
+    //input data senat
+    public function insert_senat($data){
+        $query = $this->db->insert('kandidat_senat',$data);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    //hapus senat
+    public function hapus_senat($id){
+        $where = array(
+            'idkandidat_senat'=>$id
+        );
+        $query = $this->db->delete('kandidat_senat',$where);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    //get update senat
+    public function get_update_senat($id){
+        $where = array(
+            'idkandidat_senat'=>$id
+        );
+        $query = $this->db->get_where('kandidat_senat',$where);
+        if($query->num_rows()>0)
+        {
+            return $query->result_array();
+        }else{
+            return false;
+        }
+    }
+    //update senat
+    public function update_senat($data,$id){
+        $where = array(
+            'idkandidat_senat'=>$id
+        );
+        $query = $this->db->update('kandidat_senat',$data,$where);
+        if($query){
+            return true;
         }else{
             return false;
         }
