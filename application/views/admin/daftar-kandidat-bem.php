@@ -512,9 +512,12 @@
     <section class="content">
       <div class="row">
         <div class="col-xs-12">
+        <?php if(!empty($error)){
+                echo "<div class='alert alert-danger'> ".$error. "</div>";
+              } ?>
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Daftar Kandidat BEM</h3>
+              <h3 class="box-title">Daftar Kandidat Ketua BEM</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -523,7 +526,8 @@
                 <tr>
                   
                   <th>No Urut</th>
-                  <th>Nama Pemilih</th>
+                  <th>Nama Ketua</th>
+                  <th>Nama Wakil</th>
                   <th>Angkatan</th>
                   <th>Action</th>
                 </tr>
@@ -531,18 +535,21 @@
                 <tbody>
                 <?php
                 ?>
-                <?php $no = 1; ?>
+                
                 <?php if(isset($kandidat)){ ?>
                 <?php foreach($kandidat as $data){ ?>
                     <tr>
                     
-                    <td><?php echo $data['idkandidat_BEM']; ?></td>
+                    <td><?php echo $data['no_urut']; ?></td>
                     <td><?php echo $data['nama_ketua']; ?></td>
+                    <td><?php echo $data['nama_wakil']; ?></td>
                     <td><?php echo $data['angkatan']; ?></td>
                     <td>
-                    <a href="<?php echo base_url('hapus-pemilih/').$data['idkandidat_BEM'];?>"><button class="btn btn-danger"><i class="fa fa-trash bigicon"></i></button></a>
+                    <a href="<?php echo base_url('hapus-kandidat/').$data['idkandidat_BEM'];?>"><button class="btn btn-danger"><i class="fa fa-trash bigicon"></i></button></a>
                     &nbsp;&nbsp;&nbsp;
-                    <a href="<?php echo base_url('update-pemilih/').$data['idkandidat_BEM'];?>"><button class="btn btn-primary"><i class="fa fa-upload bigicon"></i></button></a>
+                    <a href="<?php echo base_url('update-ketua-bem/').$data['idkandidat_BEM'];?>"><button class="btn btn-primary"><i class="fa fa-upload bigicon"></i></button></a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a href="<?php echo base_url('update-wakil-bem/').$data['idkandidat_BEM'];?>"><button class="btn btn-info"><i class="fa fa-upload bigicon"></i></button></a>
                     
                     </td>
                     
@@ -553,7 +560,8 @@
                 <tr>
                 
                 <th>No Urut</th>
-                <th>Nama Pemilih</th>
+                <th>Nama Ketua</th>
+                <th>Nama Wakil</th>
                 <th>Angkatan</th>
                 <th>Action</th>
                 </tr>

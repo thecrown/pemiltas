@@ -535,10 +535,14 @@
                 <?php foreach($kandidat as $data){ ?>
                     <tr>
                     
-                    <td><?php echo $data['idkandidat_senat']; ?></td>
+                    <td><?php echo $data['no_urut']; ?></td>
                     <td><?php echo $data['nama_kandidat']; ?></td>
                     <td><?php echo $data['angkatan']; ?></td>
-                    <td>X</td>
+                    <td>
+                    <a href="<?php echo base_url('hapus-senat/').$data['idkandidat_senat'];?>"><button class="btn btn-danger"><i class="fa fa-trash bigicon"></i></button></a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a href="<?php echo base_url('update-senat/').$data['idkandidat_senat'];?>"><button class="btn btn-primary"><i class="fa fa-upload bigicon"></i></button></a>
+                    </td>
                     
                   </tr>
                   <?php } } ?>

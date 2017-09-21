@@ -27,7 +27,7 @@ class Auth extends CI_Model {
 	  		if ($token != $user->password_pemilih){
 		  		$this->session->set_flashdata('err_user', '<div class="alert alert-danger alert-login" role="alert">Nama Pengguna atau Kata Sandi tidak sesuai.</div>');
 		  		redirect('login');
-		  	} elseif ($user->status == 'Sudah') {
+		  	} elseif ($user->status == 'sudah') {
 		  		$this->session->set_flashdata('err_user', '<div class="alert alert-danger alert-login" role="alert">Maaf, Anda hanya diijinkan memilih sebanyak 1 kali</div>');
 		  		redirect('login');
 		  	}else {

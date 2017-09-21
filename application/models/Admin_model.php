@@ -30,7 +30,7 @@ class Admin_model extends CI_Model {
             'idpemilih'=>$id
         );
         $query = $this->db->delete('pemilih',$where);
-        if($query){
+        if($query==true){
             return true;
         }else{
             return false;
@@ -63,14 +63,16 @@ class Admin_model extends CI_Model {
             return false;
         }
     }
+    //kandidat ketua BEM
     public function kandidat_bem(){
         $query =$this->db->get('kandidat_bem');
-        if($query->num_rows()>=1){
+        if($query->num_rows()>=0){
             return $query->result_array();
         }else{
             return false;
         }
     }
+
     public function insert_ketua_bem($data){
         $query = $this->db->insert('kandidat_bem',$data);
         if($query){
@@ -78,12 +80,130 @@ class Admin_model extends CI_Model {
         }else{
             return false;
         }
-
     }
+
+    //kandidat wakil BEM
+    public function insert_wakil_bem($data,$id){
+        $where = array(
+            'no_urut'=>$id
+        );
+        $query = $this->db->update('kandidat_bem',$data,$where);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    //hapus kandidat bem
+    public function hapus_kandidat_bem($id){
+        $where = array(
+            'idkandidat_BEM'=>$id
+        );
+        $query = $this->db->delete('kandidat_bem',$where);
+        if($query==true){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function get_update_ketua_bem($id){
+        $where = array(
+            'idkandidat_BEM'=>$id
+        );
+        $query = $this->db->get_where('kandidat_bem',$where);
+        if($query->num_rows()>0)
+        {
+            return $query->result_array();
+        }else{
+            return false;
+        }
+    }
+    public function update_ketua_bem($data,$id){
+        $where = array(
+            'idkandidat_BEM'=>$id
+        );
+
+        $query = $this->db->update('kandidat_bem',$data,$where);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function get_update_wakil_bem($id){
+        $where = array(
+            'idkandidat_BEM'=>$id
+        );
+        $query = $this->db->get_where('kandidat_bem',$where);
+        if($query->num_rows()>0)
+        {
+            return $query->result_array();
+        }else{
+            return false;
+        }
+    }
+    public function update_wakil_bem($data,$id){
+        $where =array(
+            'idkandidat_BEM'=>$id
+        );
+        $query = $this->db->update('kandidat_bem',$data,$where);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    //liat daftar senat
     public function kandidat_senat(){
         $query =$this->db->get('kandidat_senat');
-        if($query->num_rows()>=1){
+        if($query->num_rows()>=0){
             return $query->result_array();
+        }else{
+            return false;
+        }
+    }
+    //input data senat
+    public function insert_senat($data){
+        $query = $this->db->insert('kandidat_senat',$data);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    //hapus senat
+    public function hapus_senat($id){
+        $where = array(
+            'idkandidat_senat'=>$id
+        );
+        $query = $this->db->delete('kandidat_senat',$where);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    //get update senat
+    public function get_update_senat($id){
+        $where = array(
+            'idkandidat_senat'=>$id
+        );
+        $query = $this->db->get_where('kandidat_senat',$where);
+        if($query->num_rows()>0)
+        {
+            return $query->result_array();
+        }else{
+            return false;
+        }
+    }
+    //update senat
+    public function update_senat($data,$id){
+        $where = array(
+            'idkandidat_senat'=>$id
+        );
+        $query = $this->db->update('kandidat_senat',$data,$where);
+        if($query){
+            return true;
         }else{
             return false;
         }

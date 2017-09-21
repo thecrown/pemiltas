@@ -498,7 +498,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Form Tambah Pemilih
+        Form Tambah Kandidat Senat
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -514,27 +514,24 @@
         <!-- ini untuk petunjuk penambahan  -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Tambah Pemilih</h3>
+              <h3 class="box-title">Tambah Kandidat Senat</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <?php echo form_open_multipart('kandidat-ketua'); ?>
+            <?php echo form_open_multipart('senat-kandidat'); ?>
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">No urut :</label>
                   <input type="text" class="form-control" name="no_urut" id="exampleInputEmail1" placeholder="Masukan No Urut">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Nama Ketua :</label>
-                  <input type="text" class="form-control" name="nama_ketua" id="exampleInputPassword1" placeholder="Masukan Nama Ketua">
+                  <label for="exampleInputPassword1">Nama Kandidat :</label>
+                  <input type="text" class="form-control" name="nama" id="exampleInputPassword1" placeholder="Masukan Nama Ketua">
                 </div>
                 <div class="form-group">
                   <label>Angaktan :</label>
                     <select class="form-control" name="angkatan">
                     <option value="">-Pilih Angkatan-</option> 
-                      <option value="2012">2012</option>  
-                      <option value="2013">2013</option>
-                      <option value="2014">2014</option>
                       <option value="2015">2015</option>
                       <option value="2016">2016</option>
                       <option value="2017">2017</option>
@@ -542,7 +539,7 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputFile">File Foto :</label>
-                  <input type="file" name="foto_ketua" id="exampleInputFile">
+                  <input type="file" name="foto_file" id="exampleInputFile">
                 </div>
               </div>
               <div class="box-footer">

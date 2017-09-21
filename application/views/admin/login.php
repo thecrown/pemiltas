@@ -39,7 +39,7 @@
 
 			<label for="password">
 				<!-- <span>Password</span> -->
-
+        
 				<input type="password" id="password" maxlength="100" minlength="8" required placeholder="Kata Sandi" name="pass">
 
 				<ul class="input-requirements">

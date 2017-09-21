@@ -60,7 +60,7 @@ $route['hapus-pemilih/(:num)'] = 'admin/delete_pemilih/$1';
 $route['pemilih-update/(:num)'] = 'admin/valid_update/$1';
 $route['update-pemilih/(:num)'] = 'admin/update_pemilih/$1';
 $route['kandidat-bem'] = 'admin/daftar_kandidat_bem';
-$route['tambah-bem'] = 'admin/add_kandidat_bem';
+
 $route['kandidat-ketua'] = 'admin/valid_ketua_bem';
 $route['hitung-vote'] = 'admin/hitung_vote';
 $route['kandidat-senat'] = 'admin/daftar_kandidat_senat';
@@ -75,3 +75,22 @@ $route['user/thanks'] = 'user/thanks';
 $route['logout'] = 'login/logout';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['tambah-ketua-bem'] = 'admin/add_kandidat_bem_ketua';
+$route['tambah-wakil-bem'] = 'admin/add_kandidat_bem_wakil';
+$route['kandidat-wakil'] = 'admin/valid_wakil_bem';
+$route['hapus-kandidat/(:num)'] = 'admin/hapus_kandidat_bem/$1';
+$route['update-ketua-bem/(:num)'] = 'admin/update_ketua_bem/$1';
+$route['update-kandidat-ketua/(:num)'] = 'admin/valid_update_ketua_bem/$1';
+$route['update-wakil-bem/(:num)'] = 'admin/update_wakil_bem/$1';
+$route['update-kandidat-wakil/(:num)'] = 'admin/valid_update_wakil_bem/$1';
+
+//kandidat senat
+$route['tambah-senat'] = 'admin/add_kandidat_senat';
+$route['senat-kandidat'] = 'admin/valid_senat';
+$route['hapus-senat/(:num)'] = 'admin/hapus_senat/$1';
+
+$route['update-senat/(:num)'] = 'admin/update_senat/$1';
+$route['update-kandidat-senat/(:num)'] = 'admin/valid_update_senat/$1';
+
+
