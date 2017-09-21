@@ -162,6 +162,9 @@ class Admin extends CI_Controller {
 			}
 		}
 	}
+	public function delete_pasangan(){
+		
+	}
 	public function daftar_kandidat_senat(){
 		$data['kandidat'] = $this->Admin_model->kandidat_senat(); 
 		$this->load->view('admin/daftar-kandidat-senat',$data);

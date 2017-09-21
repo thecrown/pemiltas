@@ -537,7 +537,7 @@
                     <tr>
                     
                     <td><?php echo $data['idkandidat_BEM']; ?></td>
-                    <td><?php echo $data['nama_kandidat']; ?></td>
+                    <td><?php echo $data['nama_ketua']; ?></td>
                     <td><?php echo $data['angkatan']; ?></td>
                     <td>
                     <a href="<?php echo base_url('hapus-pemilih/').$data['idkandidat_BEM'];?>"><button class="btn btn-danger"><i class="fa fa-trash bigicon"></i></button></a>
