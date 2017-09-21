@@ -4,9 +4,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Admin extends CI_Controller {
 	//construct fungsinya mirip autoload
 	function __construct(){
-		parent::__construct();{   
-		}
-		$this->load->model('Admin_model'); 
+		parent::__construct();
+		$this->load->model('Admin_model');
+
+		$this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
+		$this->output->set_header("Pragma: no-cache");
+
+        $this->load->model('Auth');
+
+        if ( ($this->session->userdata('uname') || $this->session->userdata('pass')) == NULL) {
+        	$array = array(
+	        	'uname' 	=> $this->input->post('uname'),
+	        	'pass' 		=> $this->input->post('pass') 
+	        );
+	        
+	        $this->session->set_userdata( $array );
+        }
+
+        $uname 	= $this->session->userdata('uname');
+	    $pass	= $this->session->userdata('pass');
+
+	    // die($nim);
+        $this->Auth->adminAuth($uname, $pass);
+
+        if($this->Auth->isAdmin() == FALSE){
+        	redirect('dashboard/login');
+        }
 	}
 	//end construct
 	public function index()
@@ -14,10 +37,10 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/layout');
 	}
 
-	public function login()
-	{
-		$this->load->view('admin/login');
-	}
+	// public function login()
+	// {
+	// 	$this->load->view('admin/login');
+	// }
 	public function daftar_pemilih(){
 		$data['pemilih'] = $this->Admin_model->daftar_pemilih(); 
 		$this->load->view('admin/daftar_pemilih',$data);
