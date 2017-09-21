@@ -19,7 +19,7 @@
 <div class="background-image"></div>
 <br>
 	<div class="container">
-		<form class="registration" id="registration"method="post" action="<?php echo base_url('hitung-vote'); ?>">
+		<form class="registration" id="registration"method="POST" action="<?php echo base_url('hitung-vote'); ?>">
 			<div class="text-title text-center">
 				<h1>Selamat Datang</h1>
 				<p>Administrator Login</p>	
@@ -28,8 +28,8 @@
 
 			<label for="username">
 				<!-- <span>Username</span> -->
-
-				<input type="text" name="uname" id="username" minlength="3" required placeholder="Nama Pengguna">
+				
+				<input type="text" id="username" minlength="3" required placeholder="Nama Pengguna" name="uname">
 
 				<ul class="input-requirements">
 					<li>Panjang minimum 3 karakter</li>
@@ -39,8 +39,8 @@
 
 			<label for="password">
 				<!-- <span>Password</span> -->
-
-				<input type="password" name="pass" id="password" maxlength="100" minlength="8" required placeholder="Kata Sandi">
+				
+				<input type="password" id="password" maxlength="100" minlength="8" required placeholder="Kata Sandi" name="pass">
 
 				<ul class="input-requirements">
 					<li>Panjang minimum 8 karakter (maksimum 99)</li>
