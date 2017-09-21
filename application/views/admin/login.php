@@ -19,7 +19,7 @@
 <div class="background-image"></div>
 <br>
 	<div class="container">
-		<form class="registration" id="registration"method="POST" action="<?php echo base_url('hitung-vote'); ?>">
+		<form class="registration" id="registration" method="POST" action="<?php echo base_url('hitung-vote'); ?>">
 			<div class="text-title text-center">
 				<h1>Selamat Datang</h1>
 				<p>Administrator Login</p>	
