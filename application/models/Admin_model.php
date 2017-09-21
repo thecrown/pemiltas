@@ -30,7 +30,7 @@ class Admin_model extends CI_Model {
             'idpemilih'=>$id
         );
         $query = $this->db->delete('pemilih',$where);
-        if($query){
+        if($query==true){
             return true;
         }else{
             return false;
@@ -63,14 +63,16 @@ class Admin_model extends CI_Model {
             return false;
         }
     }
+    //kandidat ketua BEM
     public function kandidat_bem(){
         $query =$this->db->get('kandidat_bem');
-        if($query->num_rows()>=1){
+        if($query->num_rows()>=0){
             return $query->result_array();
         }else{
             return false;
         }
     }
+
     public function insert_ketua_bem($data){
         $query = $this->db->insert('kandidat_bem',$data);
         if($query){
@@ -78,8 +80,21 @@ class Admin_model extends CI_Model {
         }else{
             return false;
         }
-
     }
+
+    //kandidat wakil BEM
+    public function insert_wakil_bem($data,$id){
+        $where = array(
+            'no_urut'=>$id
+        );
+        $query = $this->db->update('kandidat_bem',$data,$where);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public function kandidat_senat(){
         $query =$this->db->get('kandidat_senat');
         if($query->num_rows()>=1){
