@@ -524,7 +524,7 @@
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">NIM :</label>
-                  <input type="text" class="form-control" name="nim" value="<?php echo $data['idpemilih']; ?>" id="exampleInputEmail1" placeholder="Masukan NIM">
+                  <input type="text" class="form-control" name="nim" disabled value="<?php echo $data['idpemilih']; ?>" id="exampleInputEmail1" placeholder="Masukan NIM">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Nama Pemilih :</label>
@@ -588,12 +588,6 @@
           <!-- /.box-header -->
           <div class="box-body">
             <ul>
-              <li>NIM :</li>
-                <ul>
-                  <li>NIM harus berupa Angka</li>
-                  <li>Panjang Angka maksimal 15 Digit</li>
-                  <li>Kolom NIM Tidak boleh Kosong</li>
-                </ul>
                 <li>Nama :</li>
                 <ul>
                   <li>Nama berupa Huruf</li>

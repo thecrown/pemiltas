@@ -71,6 +71,15 @@ class Admin_model extends CI_Model {
             return false;
         }
     }
+    public function insert_ketua_bem($data){
+        $query = $this->db->insert('kandidat_bem',$data);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
     public function kandidat_senat(){
         $query =$this->db->get('kandidat_senat');
         if($query->num_rows()>=1){

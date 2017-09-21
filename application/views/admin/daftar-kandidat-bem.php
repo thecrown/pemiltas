@@ -500,8 +500,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-      Daftar Pemiliih Tetap
-        <small>semua data</small>
+      Daftar Kandidat BEM
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -540,7 +539,12 @@
                     <td><?php echo $data['idkandidat_BEM']; ?></td>
                     <td><?php echo $data['nama_kandidat']; ?></td>
                     <td><?php echo $data['angkatan']; ?></td>
-                    <td>X</td>
+                    <td>
+                    <a href="<?php echo base_url('hapus-pemilih/').$data['idkandidat_BEM'];?>"><button class="btn btn-danger"><i class="fa fa-trash bigicon"></i></button></a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a href="<?php echo base_url('update-pemilih/').$data['idkandidat_BEM'];?>"><button class="btn btn-primary"><i class="fa fa-upload bigicon"></i></button></a>
+                    
+                    </td>
                     
                   </tr>
                   <?php } } ?>
