@@ -52,6 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['dashboard'] = 'admin';
 $route['daftar-pemilih'] = 'admin/daftar_pemilih';
+$route['tambah-pemilih'] = 'admin/add_pemilih';
 $route['kandidat-bem'] = 'admin/daftar_kandidat_bem';
 $route['hitung-vote'] = 'admin/hitung_vote';
 $route['kandidat-senat'] = 'admin/daftar_kandidat_senat';
