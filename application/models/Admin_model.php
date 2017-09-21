@@ -10,6 +10,59 @@ class Admin_model extends CI_Model {
             return false;
         }   
     }
+    public function add_pemilih(){
+        $data = array(
+            'idpemilih'=>$this->input->post('nim'),
+            'nama_pemilih'=>$this->input->post('nama'),
+            'angkatan'=>$this->input->post('angkatan'),
+            'password_pemilih'=>$this->input->post('password'),
+            'status'=>'Belom'
+        );
+        $query = $this->db->insert('pemilih',$data);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function delete_pemilih($id){
+        $where = array(
+            'idpemilih'=>$id
+        );
+        $query = $this->db->delete('pemilih',$where);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function get_data_update($id){
+        $where = array(
+            'idpemilih'=>$id
+        );
+        $query = $this->db->get_where('pemilih',$where);
+        if($query->num_rows()>=0){
+            return $query->result_array();
+        }else{
+            return false;
+        }
+    }
+    public function do_update_pemilih($id){
+        $where = array(
+            'idpemilih'=>$id
+        );
+        $data = array(
+            'nama_pemilih'=>$this->input->post('nama'),
+            'angkatan'=>$this->input->post('angkatan'),
+            'password_pemilih'=>$this->input->post('password')
+        );
+        $query = $this->db->update('pemilih',$data,$where);
+        if($query==true){
+            return true;
+        }else{
+            return false;
+        }
+    }
     public function kandidat_bem(){
         $query =$this->db->get('kandidat_bem');
         if($query->num_rows()>=1){

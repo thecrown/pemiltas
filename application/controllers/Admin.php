@@ -23,7 +23,60 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/daftar_pemilih',$data);
 	}
 	public function add_pemilih(){
-		$this->load->view('admin/add-pemilih');
+		$data['error'] = validation_errors();
+		$this->load->view('admin/add-pemilih',$data);
+	}
+	public function valid_pemilih(){
+		$this->form_validation->set_rules('nim','NIM','xss_clean|trim|required|numeric|max_length[15]');
+		$this->form_validation->set_rules('nama','Nama','xss_clean|trim|required');
+		$this->form_validation->set_rules('angkatan','Angkatan','xss_clean|trim|required');
+		$this->form_validation->set_rules('password','Password','xss_clean|trim|required');
+		$this->form_validation->set_rules('password2','Password','xss_clean|trim|required|matches[password]');
+		if($this->form_validation->run()==false){
+			$this->add_pemilih();
+		}else{
+			$query = $this->Admin_model->add_pemilih();
+			if($query==true){
+				$this->daftar_pemilih();
+			}else{
+				$data['error'] = "Database May Error";
+				$this->load->view('admin/add-pemilih',$data);
+			}
+		}
+	}
+	public function delete_pemilih($id=null){
+		$query = $this->Admin_model->delete_pemilih($id);
+		if($query){
+			$this->daftar_pemilih();
+		}else{
+			echo "gagal";
+		}
+	}
+	public function update_pemilih($id=null){
+		$data['pemilih'] = $this->Admin_model->get_data_update($id);
+		$this->load->view('admin/update-pemilih',$data);
+	}
+	public function valid_update($id=null){
+		$this->form_validation->set_rules('nim','NIM','xss_clean|trim|required|numeric|max_length[15]');
+		$this->form_validation->set_rules('nama','Nama','xss_clean|trim|required');
+		$this->form_validation->set_rules('angkatan','Angkatan','xss_clean|trim|required');
+		$this->form_validation->set_rules('password','Password','xss_clean|trim|required');
+		$this->form_validation->set_rules('password2','Password','xss_clean|trim|required|matches[password]');
+		if($this->form_validation->run()==false){
+			echo validation_errors();
+			// $data['error'] = "Database May Error";
+			// $data['pemilih'] = $this->Admin_model->get_data_update($id);
+			// $this->load->view('admin/update-pemilih',$data);
+		}else{
+			$query = $this->Admin_model->do_update_pemilih($id);
+			if($query==true){
+				$this->daftar_pemilih();
+			}else{
+				$data['error'] = "Database May Error";
+				$data['pemilih'] = $this->Admin_model->get_data_update($id);
+				$this->load->view('admin/update-pemilih',$data);
+			}
+		}
 	}
 	public function daftar_kandidat_bem(){
 		$data['kandidat'] = $this->Admin_model->kandidat_bem(); 

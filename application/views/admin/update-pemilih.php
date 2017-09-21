@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | General Form Elements</title>
+  <title>ini update</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -498,11 +498,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Form Tambah Pemilih
+        Form Update Pemilih
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active"><a href="<?php echo base_url('tambah-pemilih'); ?>">Tambah Pemilih</a></i></li>
+        <li class="active"><a href="<?php echo base_url('daftar-pemilih'); ?>">Daftar Pemilih</a></i></li>
       </ol>
     </section>
 
@@ -514,46 +514,50 @@
         <!-- ini untuk petunjuk penambahan  -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Tambah Pemilih</h3>
+              <h3 class="box-title">Update Pemilih</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <?php echo form_open('valid-pemilih'); ?>
+            <?php if(isset($pemilih)) { ?>
+            <?php foreach($pemilih as $data){ ?>
+            <?php echo form_open('pemilih-update/'.$data['idpemilih']); ?>
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">NIM :</label>
-                  <input type="text" class="form-control" name="nim" id="exampleInputEmail1" placeholder="Masukan NIM">
+                  <input type="text" class="form-control" name="nim" value="<?php echo $data['idpemilih']; ?>" id="exampleInputEmail1" placeholder="Masukan NIM">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Nama Pemilih :</label>
-                  <input type="text" class="form-control" name="nama" id="exampleInputPassword1" placeholder="Masukan Nama">
+                  <input type="text" class="form-control" name="nama" value="<?php echo $data['nama_pemilih']; ?>" id="exampleInputPassword1" placeholder="Masukan Nama">
                 </div>
                 <div class="form-group">
                   <label>Angaktan :</label>
                     <select class="form-control" name="angkatan">
-                    <option value="">-Pilih Angkatan-</option> 
-                      <option value="2012">2012</option>  
-                      <option value="2013">2013</option>
-                      <option value="2014">2014</option>
-                      <option value="2015">2015</option>
-                      <option value="2016">2016</option>
-                      <option value="2017">2017</option>
+                    <option value="">-Pilih Angkatan-</option>
+                    
+                      <option value="2012" <?php if($data['angkatan']==2012){echo "selected";} ?>>2012</option>  
+                      <option value="2013" <?php if($data['angkatan']==2013){echo "selected";} ?>>2013</option>
+                      <option value="2014" <?php if($data['angkatan']==2014){echo "selected";} ?>>2014</option>
+                      <option value="2015" <?php if($data['angkatan']==2015){echo "selected";} ?>>2015</option>
+                      <option value="2016" <?php if($data['angkatan']==2016){echo "selected";} ?>>2016</option>
+                      <option value="2017" <?php if($data['angkatan']==2017){echo "selected";} ?>>2017</option>
                     </select>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Masukan Password">
+                  <input type="text" class="form-control" name="password"  value="<?php echo $data['password_pemilih']; ?>" id="exampleInputPassword1" placeholder="Masukan Password">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Re-Type Password</label>
-                  <input type="password" class="form-control" name="password2" id="exampleInputPassword1" placeholder="Konfirmasi Password">
+                  <input type="text" class="form-control" name="password2" id="exampleInputPassword1" placeholder="Konfirmasi Password">
                 </div>
               </div>  
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Submit</button>
               </div>
-              
+              <?php } ?>
             <?php echo form_close(); ?>
+            <?php } ?>
           </div>
          
 
@@ -579,7 +583,7 @@
           <div class="box-header with-border">
             <i class="fa fa-text-width"></i>
 
-            <h3 class="box-title">Petunjuk Penambahan Pemilih</h3>
+            <h3 class="box-title">Petunjuk Update Pemilih</h3>
           </div>
           <!-- /.box-header -->
           <div class="box-body">

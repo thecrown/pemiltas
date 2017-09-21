@@ -545,7 +545,7 @@
                     <td><?php echo $data['password_pemilih']; ?></td>
                     <td><?php echo $data['status']; ?></td>
                     <td>
-                    <a href="<?php echo base_url('admin_1/delete_banksoal/');?>"><button class="btn btn-danger"><i class="fa fa-trash bigicon"></i></button></a>&nbsp;&nbsp;&nbsp;<a href="<?php echo base_url('admin_1/update_banksoal/');?>"><button class="btn btn-primary"><i class="fa fa-upload bigicon"></i></button></a>&nbsp;&nbsp;&nbsp;<a href="<?php echo base_url('assets/file/banksoal/');?>" target="_blank"><button class="btn btn-info"><i class="fa fa-download bigicon"></i></button></a>
+                    <a href="<?php echo base_url('hapus-pemilih/').$data['idpemilih'];?>"><button class="btn btn-danger"><i class="fa fa-trash bigicon"></i></button></a>&nbsp;&nbsp;&nbsp;<a href="<?php echo base_url('update-pemilih/').$data['idpemilih'];?>"><button class="btn btn-primary"><i class="fa fa-upload bigicon"></i></button></a>&nbsp;&nbsp;&nbsp;<a href="<?php echo base_url('assets/file/banksoal/');?>" target="_blank"><button class="btn btn-info"><i class="fa fa-download bigicon"></i></button></a>
                     </td>
                     <?php $no++; ?>
                   </tr>
