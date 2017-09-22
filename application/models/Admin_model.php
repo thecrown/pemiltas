@@ -208,7 +208,82 @@ class Admin_model extends CI_Model {
               return false;
           }
     }
+
+    public function stotal_bem(){
+        $this->db->from('pemilih');
+        $query = $this->db->count_all_results();
+
+        if($query>=0){
+            return $query;
+        }else{
+            return false;
+        }
+    }
+
+    public function stotal_senat(){
+        $where = "angkatan !='2011' AND angkatan !='2012' AND angkatan !='2013' AND angkatan !='2014'";
+        $this->db->where($where);
+        $this->db->from('pemilih');
+        $query = $this->db->count_all_results();
+
+        if($query>=0){
+            return $query;
+        }else{
+            return false;
+        }
+    }
     
+    public function sudah_bem(){
+        $where = "BEM != 'NULL'";
+        $this->db->where($where);
+        $this->db->from('hasil_vote');
+        $query = $this->db->count_all_results();
+
+        if($query>=0){
+            return $query;
+        }else{
+            return false;
+        } 
+    }
+
+    public function sudah_senat(){
+        $where = "SENAT != 'NULL'";
+        $this->db->where($where);
+        $this->db->from('hasil_vote');
+        $query = $this->db->count_all_results();
+
+        if($query>=0){
+            return $query;
+        }else{
+            return false;
+        } 
+    }
+
+    public function belum_bem(){
+        $where = "status = 'belum'";
+        $this->db->where($where);
+        $this->db->from('pemilih');
+        $query = $this->db->count_all_results();
+
+        if($query>=0){
+            return $query;
+        }else{
+            return false;
+        }
+    }
+
+    public function belum_senat(){
+        $where = "(angkatan !='2011' AND angkatan !='2012' AND angkatan !='2013' AND angkatan !='2014') AND status = 'belum'";
+        $this->db->where($where);
+        $this->db->from('pemilih');
+        $query = $this->db->count_all_results();
+
+        if($query>=0){
+            return $query;
+        }else{
+            return false;
+        }
+    }
     
     
 }

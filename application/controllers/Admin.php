@@ -7,29 +7,29 @@ class Admin extends CI_Controller {
 		parent::__construct();
 		$this->load->model('Admin_model');
 
-		$this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
-		$this->output->set_header("Pragma: no-cache");
+		// $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
+		// $this->output->set_header("Pragma: no-cache");
 
-        $this->load->model('Auth');
+  //       $this->load->model('Auth');
 
-        if ( ($this->session->userdata('uname') || $this->session->userdata('pass')) == NULL) {
-        	$array = array(
-	        	'uname' 	=> $this->input->post('uname'),
-	        	'pass' 		=> $this->input->post('pass') 
-	        );
+  //       if ( ($this->session->userdata('uname') || $this->session->userdata('pass')) == NULL) {
+  //       	$array = array(
+	 //        	'uname' 	=> $this->input->post('uname'),
+	 //        	'pass' 		=> $this->input->post('pass') 
+	 //        );
 	        
-	        $this->session->set_userdata( $array );
-        }
+	 //        $this->session->set_userdata( $array );
+  //       }
 
-        $uname 	= $this->session->userdata('uname');
-	    $pass	= $this->session->userdata('pass');
+  //       $uname 	= $this->session->userdata('uname');
+	 //    $pass	= $this->session->userdata('pass');
 
-	    // die($nim);
-        $this->Auth->adminAuth($uname, $pass);
+	 //    // die($nim);
+  //       $this->Auth->adminAuth($uname, $pass);
 
-        if($this->Auth->isAdmin() == FALSE){
-        	redirect('dashboard/login');
-        }
+  //       if($this->Auth->isAdmin() == FALSE){
+  //       	redirect('dashboard/login');
+  //       }
 	}
 	//end construct
 	public function index()
@@ -200,7 +200,15 @@ class Admin extends CI_Controller {
 		$data['nos1']=$this->Admin_model->hitung_senat_1();
 		$data['nos2']=$this->Admin_model->hitung_senat_2();
 		$data['nos3']=$this->Admin_model->hitung_senat_3();
-		$data['nos4']=$this->Admin_model->hitung_senat_4();				
+		$data['nos4']=$this->Admin_model->hitung_senat_4();	
+
+		$data['bem_total'] = $this->Admin_model->stotal_bem();
+		$data['bem_sudah'] = $this->Admin_model->sudah_bem();
+		$data['bem_belum'] = $this->Admin_model->belum_bem();
+		$data['senat_total'] = $this->Admin_model->stotal_senat();
+		$data['senat_sudah'] = $this->Admin_model->sudah_senat();
+		$data['senat_belum'] = $this->Admin_model->belum_senat();
+
 		$this->load->view('admin/hasil-vote',$data);
 		// echo $data;
 		// var_dump($data);
