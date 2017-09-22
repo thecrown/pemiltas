@@ -173,9 +173,9 @@
                     <td>
                     <a href="<?php echo base_url('hapus-kandidat/').$data['idkandidat_BEM'];?>"><button class="btn btn-danger"><i class="fa fa-trash bigicon"></i></button></a>
                     &nbsp;&nbsp;&nbsp;
-                    <a href="<?php echo base_url('update-ketua-bem/').$data['idkandidat_BEM'];?>"><button class="btn btn-primary"><i class="fa fa-upload bigicon"></i></button></a>
+                    <a class="btn btn-primary" href="<?php echo base_url('update-ketua-bem/').$data['idkandidat_BEM'];?>" data-toggle="tooltip" title="Update Kandidat Ketua"><i class="fa fa-upload bigicon"></i></a>
                     &nbsp;&nbsp;&nbsp;
-                    <a href="<?php echo base_url('update-wakil-bem/').$data['idkandidat_BEM'];?>"><button class="btn btn-info"><i class="fa fa-upload bigicon"></i></button></a>
+                    <a class="btn btn-info href="<?php echo base_url('update-wakil-bem/').$data['idkandidat_BEM'];?>" data-toggle="tooltip" title="Update Kandidat Wakil Ketua"><i class="fa fa-upload bigicon"></i></a>
                     
                     </td>
                     

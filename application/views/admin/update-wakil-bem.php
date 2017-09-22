@@ -197,13 +197,12 @@
           <!-- /.box-header -->
           <div class="box-body">
             <ul>
-              <li>NIM :</li>
+              <li>No urut :</li>
                 <ul>
-                  <li>NIM harus berupa Angka</li>
-                  <li>Panjang Angka maksimal 15 Digit</li>
+                  <li>Isikan dengan nomor urut calon</li>
                   <li>Kolom NIM Tidak boleh Kosong</li>
                 </ul>
-                <li>Nama :</li>
+                <li>Nama Ketua:</li>
                 <ul>
                   <li>Nama berupa Huruf</li>
                   <li>Kolom Nama Tidak boleh Kosong</li>
@@ -213,10 +212,11 @@
                   <li>Pilih Kolom Angkatan Sesuai data Pemilih</li>
                   <li>Kolom Angkatan Tidak boleh Kosong</li>
                 </ul>
-                <li>Password :</li>
+                <li>File Foto :</li>
                 <ul>
-                  <li>Password berupa Token yang sudah Dibuat Panitia</li>
-                  <li>Password Tidak Boleh Kosong</li>
+                  <li>Dimensi foto (fit) 200px X 325px potrait</li>
+                  <li>Format file foto yang diijinkan hanya PNG</li>
+                  <li>File foto Tidak Boleh Kosong</li>
                 </ul>
             </ul>
           </div>

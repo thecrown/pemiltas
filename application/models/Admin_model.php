@@ -16,7 +16,7 @@ class Admin_model extends CI_Model {
             'nama_pemilih'=>$this->input->post('nama'),
             'angkatan'=>$this->input->post('angkatan'),
             'password_pemilih'=>$this->input->post('password'),
-            'status'=>'Belom'
+            'status'=>'belum'
         );
         $query = $this->db->insert('pemilih',$data);
         if($query){
@@ -54,7 +54,8 @@ class Admin_model extends CI_Model {
         $data = array(
             'nama_pemilih'=>$this->input->post('nama'),
             'angkatan'=>$this->input->post('angkatan'),
-            'password_pemilih'=>$this->input->post('password')
+            'password_pemilih'=>$this->input->post('password'),
+            
         );
         $query = $this->db->update('pemilih',$data,$where);
         if($query==true){
