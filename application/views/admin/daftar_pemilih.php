@@ -79,7 +79,7 @@
 <section class="sidebar">
   <ul class="sidebar-menu">
     <li class="header">Menu Utama</li>
-    <li><a href=""><i class="fa fa-pie-chart" aria-hidden="true"></i> <span>Perolehan Suara</span></a></li>
+    <li><a href="<?php echo base_url('hitung-vote'); ?>"><i class="fa fa-pie-chart" aria-hidden="true"></i> <span>Perolehan Suara</span></a></li>
     <li class="treeview">
       <a href="#">
         <i class="fa fa-bullhorn" aria-hidden="true"></i> <span>BEM</span>
@@ -131,7 +131,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active"><a href="<?php echo base_url('daftar-pemilih'); ?>">data pemilih</a></li>
+        <li class="active"><a href="<?php echo base_url('hitung-vote'); ?>">data pemilih</a></li>
       </ol>
     </section>
 
