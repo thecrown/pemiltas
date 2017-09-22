@@ -508,7 +508,15 @@ class Admin extends CI_Controller {
 		$data['nos1']=$this->Admin_model->hitung_senat_1();
 		$data['nos2']=$this->Admin_model->hitung_senat_2();
 		$data['nos3']=$this->Admin_model->hitung_senat_3();
-		$data['nos4']=$this->Admin_model->hitung_senat_4();				
+		$data['nos4']=$this->Admin_model->hitung_senat_4();	
+
+		$data['bem_total'] = $this->Admin_model->stotal_bem();
+		$data['bem_sudah'] = $this->Admin_model->sudah_bem();
+		$data['bem_belum'] = $this->Admin_model->belum_bem();
+		$data['senat_total'] = $this->Admin_model->stotal_senat();
+		$data['senat_sudah'] = $this->Admin_model->sudah_senat();
+		$data['senat_belum'] = $this->Admin_model->belum_senat();
+
 		$this->load->view('admin/hasil-vote',$data);
 		// echo $data;
 		// var_dump($data);
