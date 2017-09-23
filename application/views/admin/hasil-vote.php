@@ -74,7 +74,7 @@
 
         var options = {
           pieHole: 0.3,
-          title: 'Grafik Perolehan Suara BEM'
+          title: 'Grafik Perolehan Suara Senat'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('donut_senat'));
@@ -135,7 +135,7 @@
   <section class="sidebar">
     <ul class="sidebar-menu">
       <li class="header">Menu Utama</li>
-      <li><a href=""><i class="fa fa-pie-chart" aria-hidden="true"></i> <span>Perolehan Suara</span></a></li>
+      <li><a href="<?php echo base_url('hitung-vote'); ?>"><i class="fa fa-pie-chart" aria-hidden="true"></i> <span>Perolehan Suara</span></a></li>
       <li class="treeview">
         <a href="#">
           <i class="fa fa-bullhorn" aria-hidden="true"></i> <span>BEM</span>
