@@ -334,10 +334,10 @@ class Admin_model extends CI_Model {
         $this->db->from('pemilih');
         $query = $this->db->count_all_results();
 
-        if($query>=0){
+        if($query > 0){
             return $query;
         }else{
-            return false;
+            return 0;
         }
     }
 
@@ -347,10 +347,10 @@ class Admin_model extends CI_Model {
         $this->db->from('pemilih');
         $query = $this->db->count_all_results();
 
-        if($query>=0){
+        if($query > 0){
             return $query;
         }else{
-            return false;
+            return 0;
         }
     }
     
@@ -360,10 +360,10 @@ class Admin_model extends CI_Model {
         $this->db->from('hasil_vote');
         $query = $this->db->count_all_results();
 
-        if($query>=0){
+        if($query > 0){
             return $query;
         }else{
-            return false;
+            return 0;
         } 
     }
 
@@ -373,10 +373,10 @@ class Admin_model extends CI_Model {
         $this->db->from('hasil_vote');
         $query = $this->db->count_all_results();
 
-        if($query>=0){
+        if($query > 0){
             return $query;
         }else{
-            return false;
+            return 0;
         } 
     }
 
@@ -386,10 +386,10 @@ class Admin_model extends CI_Model {
         $this->db->from('pemilih');
         $query = $this->db->count_all_results();
 
-        if($query>=0){
+        if($query > 0){
             return $query;
         }else{
-            return false;
+            return 0;
         }
     }
 
@@ -399,11 +399,40 @@ class Admin_model extends CI_Model {
         $this->db->from('pemilih');
         $query = $this->db->count_all_results();
 
-        if($query>=0){
+        if($query > 0){
             return $query;
         }else{
-            return false;
+            return 0;
         }
+    }
+
+    public function total_senat_angkatan(string $angkatan) {
+        $where = array('angkatan' => $angkatan );
+        $this->db->where($where);
+        $this->db->from('pemilih');
+        $query = $this->db->count_all_results();
+
+        if($query > 0){
+            return $query;
+        }else{
+            return 0;
+        }   
+    }    
+
+    public function sudah_senat_angkatan(string $angkatan) {
+        $where = array(
+            'angkatan' => $angkatan,
+            'status'   => 'sudah'
+        );
+        $this->db->where($where);
+        $this->db->from('pemilih');
+        $query = $this->db->count_all_results();
+
+        if($query > 0){
+            return $query;
+        }else{
+            return 0;
+        }   
     }
     
     
