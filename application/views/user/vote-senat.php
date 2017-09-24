@@ -1,18 +1,18 @@
 <div class="container-fluid">
 	<div class="vote-title text-center">
 		<h2>Calon Senator Angkatan <?php echo $angkatan; ?> <br>SM FKM Undip 2018</h2>
-		<p><?php echo "$waktu, $nama ($nim)"; ?> |<a href="" class="btn btn-link" data-toggle="modal" data-target="#myModal">Petunjuk</a> |<a href="<?php echo base_url('logout'); ?>" class="btn btn-link" data-toggle="modal" data-target="#exitModal">Keluar</a></p>
+		<p><?php echo "$waktu, $nama ($nim)"; ?> |<a href="" class="btn btn-link" data-toggle="modal" data-target="#myModal">Petunjuk</a> <!-- |<a href="<?php echo base_url('logout'); ?>" class="btn btn-link" data-toggle="modal" data-target="#exitModal">Keluar</a> --></p>
 	</div>
 	<div class="row text-center">		
 		<div class="col-md-11 line"></div>
 	</div>
 	<div class="row text-center">
-	<form action="<?php echo base_url('user/review');?>" method="POST">
+	<form name="myForm" action="<?php echo base_url('user/review');?>" method="POST" onsubmit="return validate()">
 	<?php for ($i=1; $i<5; $i++) { ?>
 	<div class="col-vote col-md-2">
 		<div class="row text-center" style="background: rgba(166, 75, 154, 1);">
 			<input type="hidden" name="paslonbem" value="<?php echo $this->session->userdata('bem'); ?>">
-			<input type="radio" class="option-input radio" name="senator" data-checked="<?php echo $i; ?>" value="<?php echo $i; ?>" data-toggle="tooltip" id="radio-vote"/>
+			<input type="radio" id="r" class="option-input radio" name="senator" data-checked="<?php echo $i; ?>" value="<?php echo $i; ?>" data-toggle="tooltip" id="radio-vote"/>
 		</div>
 		<div class="row ava-container">
 			<div class="col-md-12">
@@ -35,7 +35,7 @@
 	<div class="row text-center">
 		<div class="col-md-3 line"></div>
 		<div class="col-md-5 line transparent">
-			<input type="submit" name="fsenat" class="btn btn-link" value="Lanjut &raquo;">
+			<input type="submit" id="lanjut" name="fsenat" class="btn btn-link" value="Lanjut &raquo;" onclick="is_vote(validate())">
 		</div>
 		<div class="col-md-3 line"></div>
 	</div>

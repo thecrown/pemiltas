@@ -79,10 +79,6 @@ class User extends CI_Controller {
 		$this->load->view('user/layout');
 	}
 
-	// public function login()
-	// {
-	// 	$this->load->view('user/login');
-	// }
 
 	public function bem() 
 	{
@@ -129,12 +125,13 @@ class User extends CI_Controller {
 
 	public function thanks() {
 
-		$nim	= $this->session->userdata('nim');
-		$bem 	= $this->session->userdata('bem');
-		$senat 	= $this->session->userdata('senat');
+		$nim		= $this->session->userdata('nim');
+		$bem 		= $this->session->userdata('bem');
+		$senat 		= $this->session->userdata('senat');
+		$angkatan 	= $this->session->userdata('angkatan');
 
 		$this->load->model('User_model');
-		$this->User_model->voting($nim, $bem, $senat);
+		$this->User_model->voting($nim, $bem, $senat, $angkatan);
 
 		$data['waktu'] = $this->greeting_msg();
 		$data['view']	= 'thanks-msg';

@@ -238,15 +238,6 @@ a.btn-link:hover {
   text-decoration: underline;
 }
 
-/*input[type=submit] {
-  background: transparent;
-  border: none;
-  color: #F1F0FF; 
-  font-size: 20px;
-  padding: .5%;
-}*/
-
-
 .modal-header {
   background-color: rgba(166, 75, 154, 1);
   color: #F1F0FF;
@@ -282,7 +273,7 @@ button.close {
   border: none;
   position: absolute;
   bottom: -25px;
-  left: 37%;
+  left: 39%;
   background: #F1F0FF;
   border-radius: 20px;
 }

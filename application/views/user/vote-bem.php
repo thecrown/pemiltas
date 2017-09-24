@@ -2,23 +2,23 @@
 	<div class="vote-title text-center">
 		<h2>Pasangan Calon Ketua dan Wakil Ketua <br>BEM FKM Undip 2018</h2>
 		<!-- <hr> -->
-		<p><?php echo "$waktu, $nama ($nim)"; ?> |<a href="" class="btn btn-link" data-toggle="modal" data-target="#myModal">Petunjuk</a> |<a href="" class="btn btn-link" data-toggle="modal" data-target="#exitModal">Keluar</a></p>
+		<p><?php echo "$waktu, $nama ($nim)"; ?> |<a href="" class="btn btn-link" data-toggle="modal" data-target="#myModal">Petunjuk</a> <!-- |<a href="" class="btn btn-link" data-toggle="modal" data-target="#exitModal">Keluar</a> --></p>
 	</div>
 	<div class="row text-center">		
 		<div class="col-md-11 line"></div>
 	</div>
 	<div class="row text-center vote-container">
-	<form action="<?php 
-			$list_senator = array("2015", "2016", "2017");
-			if (!in_array($angkatan, $list_senator)) {
-				echo base_url('user/review');
-			} else {
-				echo base_url('user/vote-senat');
-			}?>" method="POST">
+	<form name="myForm" action="<?php 
+				$list_senator = array("2015", "2016", "2017");
+				if (!in_array($angkatan, $list_senator)) {
+					echo base_url('user/review');
+				} else {
+					echo base_url('user/vote-senat');
+				}?>" method="POST" onsubmit="return validate()">
 	<?php for ($i=1; $i<4; $i++) { ?>
 	<div class="col-vote col-md-3">
-		<div class="row text-center" style="background: rgba(166, 75, 154, 1);">
-			<input type="radio" class="option-input radio" name="paslonbem" data-checked="<?php echo $i; ?>" value="<?php echo $i; ?>" data-toggle="tooltip"/>
+		<div class="row text-center option" style="background: rgba(166, 75, 154, 1);">
+			<input type="radio" id="r" class="option-input radio" name="paslonbem" data-checked="<?php echo $i; ?>" value="<?php echo $i; ?>" data-toggle="tooltip"/>
 		</div>
 		<div class="row ava-container">
 			<div class="col-md-6">
@@ -45,7 +45,7 @@
 	<div class="row text-center">
 		<div class="col-md-3 line"></div>
 		<div class="col-md-5 line transparent">
-			<input type="submit" name="fbem" class="btn btn-link" value="Lanjut &raquo;">
+			<input type="submit" id="lanjut" name="fbem" class="btn btn-link" value="Lanjut &raquo;" onclick="is_vote(validate())">
 		</div>
 		<div class="col-md-3 line"></div>
 	</div>

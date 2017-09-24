@@ -6,9 +6,7 @@
 	$data['nama'] 		= $this->session->userdata('nama');
 	$data['nim']		= $this->session->userdata('nim');
 	$data['angkatan']	= $this->session->userdata('angkatan');
-	// $data['nama'] = 'Amri Luthfi';
-	// $data['nim'] = '21120114130060';
-	// $data['angkatan'] = '2016';
+
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +20,7 @@
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="<?php echo base_url();?>assets/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/css/font-awesome.min.css">
   <!-- External css -->
   <link rel="stylesheet" href="<?php echo base_url();?>assets/css/userlayout.css">
 
@@ -58,20 +56,18 @@
 	  </div>
 	</div>
 
-	<div id="exitModal" class="modal fade" role="dialog">
+	<div id="nogolput" class="modal fade" role="dialog">
 	  <div class="modal-dialog">
 	    <!-- Modal content-->
 	    <div class="modal-content">
 	      <div class="modal-header">
-	        <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-	        <h2 class="modal-title">Keluar dari Sistem</h2>
+	        <h2 class="modal-title">Peringatan !</h2>
 	      </div>
 	      <div class="modal-body">
-	      	<h3>Data Anda belum tersimpan, Yakin ingin keluar dari sistem ?</h3>
+	      	<h3>Anda belum memilih. Silahkan pilih terlebih dahulu untuk melanjutkan !</h3>
 	      </div>
 	      <div class="modal-footer">
-	      	<a href="<?php echo base_url('logout'); ?>" class="btn btn-danger pull-right">Iya</a>
-	        <a class="btn btn-info pull-right" data-dismiss="modal">Tidak</a>
+	        <button type="button" class="btn btn-info btn-md" data-dismiss="modal">Mengerti</button>
 	      </div>
 	    </div>
 	  </div>
@@ -90,6 +86,28 @@ $(document).ready(function(){
 		trigger : 'hover' 
 	});
 });
+
+function validate()
+{
+  var retval = false;
+  for (var i=0; i < document.myForm.r.length; i++)
+  {
+    if (document.myForm.r[i].checked)
+    {
+      retval = true;
+    } 
+  }  
+
+  return retval;
+}
+
+function is_vote($check) {
+	var checked = $check;
+	if (checked == false) {
+		$('#nogolput').modal('show');
+	}
+}
+
 </script>
 </body>
 </html>
