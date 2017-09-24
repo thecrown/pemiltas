@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="<?php echo base_url();?>assets/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets');?>/css/admin.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url('assets');?>/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -193,17 +194,60 @@
     <section class="content">
 
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
         <!-- Donut chart -->
         <div class="box box-primary">
             <div class="box-header with-border">
               <i class="fa fa-pie-chart" aria-hidden="true"></i>
-              <h3 class="box-title">Grafik Perolehan Suara</h3>
+              <h3 class="box-title">Grafik Perolehan Suara BEM</h3>
             </div>
             <div class="box-body">
-                <!-- <div class="pull-left" id="donut_bem" style="width: 500px; height: 300px;"></div>
-                <div class="pull-right" id="donut_senat" style="width: 500px; height: 300px;"></div> -->
-                <div id="donut-chart" style="height: 300px;"></div>
+                <div id="donut-bem" style="height: 300px;"></div>
+            </div>
+            <!-- /.box-body-->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-6">
+        <!-- Donut chart -->
+        <div class="box box-primary">
+            <div class="box-header with-border">
+              <i class="fa fa-pie-chart" aria-hidden="true"></i>
+              <h3 class="box-title">Grafik Perolehan Suara Senat 2015</h3>
+            </div>
+            <div class="box-body">
+                <div id="donut-senat15" style="height: 300px;"></div>
+            </div>
+            <!-- /.box-body-->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-6">
+        <!-- Donut chart -->
+        <div class="box box-primary">
+            <div class="box-header with-border">
+              <i class="fa fa-pie-chart" aria-hidden="true"></i>
+              <h3 class="box-title">Grafik Perolehan Suara Senat 2016</h3>
+            </div>
+            <div class="box-body">
+                <div id="donut-senat16" style="height: 300px;"></div>
+            </div>
+            <!-- /.box-body-->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-6">
+        <!-- Donut chart -->
+        <div class="box box-primary">
+            <div class="box-header with-border">
+              <i class="fa fa-pie-chart" aria-hidden="true"></i>
+              <h3 class="box-title">Grafik Perolehan Suara Senat 2017</h3>
+            </div>
+            <div class="box-body">
+                <div id="donut-senat17" style="height: 300px;"></div>
             </div>
             <!-- /.box-body-->
           </div>
@@ -212,113 +256,162 @@
         <!-- /.col -->
       </div>
       <!-- /.row -->
-    
-    <!-- Small boxes (Stat box) -->
-      <div class="row">
-        <section class="content-header">
-          <h1>Lalulintas Suara BEM</h1><br>
-        </section>
-        <div class="col-lg-4 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-aqua">
-            <div class="inner">
-              <h3><?php echo "$bem_total"; ?></h3>
-
-              <p>Total Suara</p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-clone" aria-hidden="true"></i>
-            </div>
-            <div class="small-box-footer"></div>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-4 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3> <?php echo "$bem_sudah | $bem_sudah_persen ";?><sup style="font-size: 20px">%</sup></h3>
-
-              <p>Suara Masuk</p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-check-square-o" aria-hidden="true"></i>
-            </div>
-            <div class="small-box-footer"></div>
-          </div>
-        </div>
-        <!-- ./col -->
-        
-        <div class="col-lg-4 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <h3> <?php echo "$bem_belum | $bem_belum_persen ";?><sup style="font-size: 20px">%</sup></h3>
-
-              <p>Belum Memilih</p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-minus-square-o" aria-hidden="true"></i>
-            </div>
-            <div class="small-box-footer"></div>
-          </div>
-        </div>
-        <!-- ./col -->
-      </div>
-      <!-- /.row -->
 
       <div class="row">
-        <section class="content-header">
-          <h1>Lalulintas Suara Senat</h1><br>
-        </section>
-        <div class="col-lg-4 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-aqua">
-            <div class="inner">
-              <h3><?php echo "$senat_total"; ?></h3>
-
-              <p>Total Suara</p>
+      <div class="col-md-12">
+        <div class="box">
+            <div class="box-header">
+              <h1 class="box-title"><i class="fa fa-database" aria-hidden="true"></i> Tabel Rekapitulasi Suara BEM</h1>
             </div>
-            <div class="icon">
-              <i class="fa fa-clone" aria-hidden="true"></i>
+            <!-- /.box-header -->
+            <div class="box-body no-padding">
+              <table class="table text-upper">
+              <tr>
+                  <th>NO</th>
+                  <th colspan="2">Pasangan Calon</th>
+                  <th>Perolehan Suara</th>
+              </tr>
+              <?php 
+                $this->load->model('Admin_model');
+                for ($i= 1; $i <= $xkandidat_bem; $i++) { 
+                  $data = $this->Admin_model->get_data_kandidat_bem($i);
+                  $e = $this->Admin_model->hitung_bem($i);
+              ?>
+                <tr>
+                  <td class="text-center bigger"><?php echo $data->no_urut; ?></td>
+                  <td class="foto">
+                      <ul class="foto_paslon">
+                        <li><img src="<?php echo base_url('assets');?>/img/bem/kabem<?php echo $data->no_urut;?>.png" style="width:40px"></li>
+                        <li><img src="<?php echo base_url('assets');?>/img/bem/wakabem<?php echo $data->no_urut;?>.png" style="width:40px"></li>
+                      </ul>
+                  </td>
+                  <td class="nama"><?php echo "$data->nama_ketua <br> $data->nama_wakil";?></td>
+                  <td class="text-center bigger"><?php echo "$e / $bem_sudah"; ?></td>
+                </tr>
+                <?php } ?>
+              </table>
             </div>
-            <div class="small-box-footer"></div>
+            <!-- /.box-body -->
           </div>
+          <!-- /.box -->
         </div>
-        <!-- ./col -->
-        <div class="col-lg-4 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3> <?php echo "$senat_sudah | $senat_sudah_persen ";?><sup style="font-size: 20px">%</sup></h3>
-
-              <p>Suara Masuk</p>
+        <!-- /.col -->
+      
+      <div class="col-md-12">
+        <div class="box">
+            <div class="box-header">
+              <h1 class="box-title"><i class="fa fa-database" aria-hidden="true"></i> Tabel Rekapitulasi Suara Senat Angkatan 2015</h1>
             </div>
-            <div class="icon">
-              <i class="fa fa-check-square-o" aria-hidden="true"></i>
+            <!-- /.box-header -->
+            <div class="box-body no-padding">
+              <table class="table text-upper">
+              <tr>
+                  <th>NO</th>
+                  <th colspan="2">Calon Senat Angkatan</th>
+                  <th>Perolehan Suara</th>
+              </tr>
+              <?php 
+                $this->load->model('Admin_model');
+                for ($i= 1; $i <= $xkandidat_senat15; $i++) {
+                  $r = $this->Admin_model->get_data_kandidat_senat($i, "2015"); 
+                  $e = $this->Admin_model->hitung_senat($i, "2015");
+              ?>
+                <tr>
+                  <td class="text-center bigger"><?php echo $r->no_urut; ?></td>
+                  <td class="foto">
+                      <ul class="foto_paslon">
+                        <li><img src="<?php echo base_url('assets');?>/img/senat/2015/senat<?php echo $r->no_urut;?>.png" style="width:40px"></li>
+                      </ul>
+                  </td>
+                  <td class="nama-senat"><?php echo "$r->nama_kandidat";?></td>
+                  <td class="text-center bigger"><?php echo "$e / $senat_sudah"; ?></td>
+                </tr>
+                <?php } ?>
+              </table>
             </div>
-            <div class="small-box-footer"></div>
+            <!-- /.box-body -->
           </div>
+          <!-- /.box -->
         </div>
-        <!-- ./col -->
-        
-        <div class="col-lg-4 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <h3> <?php echo "$senat_belum | $senat_belum_persen ";?><sup style="font-size: 20px">%</sup></h3>
+        <!-- /.col -->
 
-              <p>Belum Memilih</p>
+        <div class="col-md-12">
+        <div class="box">
+            <div class="box-header">
+              <h1 class="box-title"><i class="fa fa-database" aria-hidden="true"></i> Tabel Rekapitulasi Suara Senat Angkatan 2016</h1>
             </div>
-            <div class="icon">
-              <i class="fa fa-minus-square-o" aria-hidden="true"></i>
+            <!-- /.box-header -->
+            <div class="box-body no-padding">
+              <table class="table text-upper">
+              <tr>
+                  <th>NO</th>
+                  <th colspan="2">Calon Senat Angkatan</th>
+                  <th>Perolehan Suara</th>
+              </tr>
+              <?php 
+                $this->load->model('Admin_model');
+                for ($i= 1; $i <= $xkandidat_senat16; $i++) {
+                  $r = $this->Admin_model->get_data_kandidat_senat($i, "2016"); 
+                  $e = $this->Admin_model->hitung_senat($i, "2016");
+              ?>
+                <tr>
+                  <td class="text-center bigger"><?php echo $r->no_urut; ?></td>
+                  <td class="foto">
+                      <ul class="foto_paslon">
+                        <li><img src="<?php echo base_url('assets');?>/img/senat/2016/senat<?php echo $r->no_urut;?>.png" style="width:40px"></li>
+                      </ul>
+                  </td>
+                  <td class="nama-senat"><?php echo "$r->nama_kandidat";?></td>
+                  <td class="text-center bigger"><?php echo "$e / $senat_sudah"; ?></td>
+                </tr>
+                <?php } ?>
+              </table>
             </div>
-            <div class="small-box-footer"></div>
+            <!-- /.box-body -->
           </div>
+          <!-- /.box -->
         </div>
-        <!-- ./col -->
+        <!-- /.col -->
+
+        <div class="col-md-12">
+        <div class="box">
+            <div class="box-header">
+              <h1 class="box-title"><i class="fa fa-database" aria-hidden="true"></i> Tabel Rekapitulasi Suara Senat Angkatan 2017</h1>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body no-padding">
+              <table class="table text-upper">
+              <tr>
+                  <th>NO</th>
+                  <th colspan="2">Calon Senat Angkatan</th>
+                  <th>Perolehan Suara</th>
+              </tr>
+              <?php 
+                $this->load->model('Admin_model');
+                for ($i= 1; $i <= $xkandidat_senat17; $i++) {
+                  $r = $this->Admin_model->get_data_kandidat_senat($i, "2017"); 
+                  $e = $this->Admin_model->hitung_senat($i, "2017");
+              ?>
+                <tr>
+                  <td class="text-center bigger"><?php echo $r->no_urut; ?></td>
+                  <td class="foto">
+                      <ul class="foto_paslon">
+                        <li><img src="<?php echo base_url('assets');?>/img/senat/2017/senat<?php echo $r->no_urut;?>.png" style="width:40px"></li>
+                      </ul>
+                  </td>
+                  <td class="nama-senat"><?php echo "$r->nama_kandidat";?></td>
+                  <td class="text-center bigger"><?php echo "$e / $senat_sudah"; ?></td>
+                </tr>
+                <?php } ?>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
       </div>
-      <!-- /.row -->
+      </div>
 
     </section>
     <!-- /.content -->
@@ -359,28 +452,13 @@
 <script>
   $(function () {
 
-    var updateInterval = 500; 
-    var realtime = "on"; 
-    function update() {
-
-      interactive_plot.setData([donutData]);
-
-      interactive_plot.draw();
-      if (realtime === "on")
-        setTimeout(update, updateInterval);
-    }
-
-    if (realtime === "on") {
-      update();
-    }
-
-    var donutData = [
-      {label: "Paslon1", data: <?php echo "$no1"; ?>, color: "#3c8dbc"},
-      {label: "Paslon2", data: <?php echo "$no2"; ?>, color: "#0073b7"},
-      {label: "Paslon3", data: <?php echo "$no3"; ?>, color: "#00c0ef"}
+    var donutBEM = [
+      {label: "Paslon 2", data: <?php echo "$no1"; ?>, color: "#8B0000"},
+      {label: "Paslon 3", data: <?php echo "$no2"; ?>, color: "#008000"},
+      {label: "Paslon 4", data: <?php echo "$no3"; ?>, color: "#FF8C00"}
     ];
 
-    var interactive_plot = $.plot("#donut-chart", [donutData], {
+    $.plot("#donut-bem", donutBEM, {
       series: {
         pie: {
           show: true,
@@ -388,7 +466,88 @@
           innerRadius: 0.5,
           label: {
             show: true,
-            radius: 2 / 3,
+            radius: 2.2 / 3,
+            formatter: labelFormatter,
+            threshold: 0.1
+          }
+
+        }
+      },
+      legend: {
+        show: false
+      }
+    });
+
+    var donut15 = [
+      {label: "Calon 1", data: <?php echo "$senat15_1"; ?>, color: "#000080"},
+      {label: "Calon 2", data: <?php echo "$senat15_2"; ?>, color: "#8B0000"},
+      {label: "Calon 3", data: <?php echo "$senat15_3"; ?>, color: "#008000"},
+      {label: "Calon 4", data: <?php echo "$senat15_4"; ?>, color: "#FF8C00"}
+    ];
+
+    $.plot("#donut-senat15", donut15, {
+      series: {
+        pie: {
+          show: true,
+          radius: 1,
+          innerRadius: 0.5,
+          label: {
+            show: true,
+            radius: 2.2 / 3,
+            formatter: labelFormatter,
+            threshold: 0.1
+          }
+
+        }
+      },
+      legend: {
+        show: false
+      }
+    });
+
+    var donut16 = [
+      {label: "Calon 1", data: <?php echo "$senat16_1"; ?>, color: "#000080"},
+      {label: "Calon 2", data: <?php echo "$senat16_2"; ?>, color: "#8B0000"},
+      {label: "Calon 3", data: <?php echo "$senat16_3"; ?>, color: "#008000"},
+      {label: "Calon 4", data: <?php echo "$senat16_4"; ?>, color: "#FF8C00"}
+    ];
+
+    $.plot("#donut-senat16", donut16, {
+      series: {
+        pie: {
+          show: true,
+          radius: 1,
+          innerRadius: 0.5,
+          label: {
+            show: true,
+            radius: 2.2 / 3,
+            formatter: labelFormatter,
+            threshold: 0.1
+          }
+
+        }
+      },
+      legend: {
+        show: false
+      }
+    });
+
+    var donut17 = [
+      {label: "Calon 1", data: <?php echo "$senat17_1"; ?>, color: "#000080"},
+      {label: "Calon 2", data: <?php echo "$senat17_2"; ?>, color: "#8B0000"},
+      {label: "Calon 3", data: <?php echo "$senat17_3"; ?>, color: "#008000"},
+      {label: "Calon 4", data: <?php echo "$senat17_4"; ?>, color: "#FF8C00"}
+    ];
+
+    $.plot("#donut-senat17", donut17, {
+      series: {
+        pie: {
+          show: true,
+          radius: 1,
+          innerRadius: 0.5,
+          label: {
+            show: true,
+            radius: 2.2 / 3,
             formatter: labelFormatter,
             threshold: 0.1
           }
@@ -402,12 +561,6 @@
 
   });
 
-    
-    
-  /*
-   * Custom Label formatter
-   * ----------------------
-   */
   function labelFormatter(label, series) {
     return '<div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">'
         + label
