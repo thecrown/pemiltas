@@ -270,63 +270,67 @@ class Admin_model extends CI_Model {
           }
     }
     //hitung hasil vote dengan no urut 1 senar
-    public function hitung_senat_1(){
+    public function hitung_senat_1(string $angkatan){
         $where =array(
-            'SENAT'=>1
+            'SENAT'=>1,
+            'angkatan' => $angkatan
         );
         $this->db->where($where);
         $this->db->from('hasil_vote');
         $query = $this->db->count_all_results();
 
-         if($query>=0){
+         if($query > 0){
              return $query;
           }else{
-              return false;
+              return 0;
           }
     }
     //hitung hasil vote dengan no urut 2 senat
-    public function hitung_senat_2(){
+    public function hitung_senat_2(string $angkatan){
         $where =array(
-            'SENAT'=>2
+            'SENAT'=>2,
+            'angkatan' => $angkatan
         );
         $this->db->where($where);
         $this->db->from('hasil_vote');
         $query = $this->db->count_all_results();
 
-         if($query>=0){
+         if($query > 0){
              return $query;
           }else{
-              return false;
+              return 0;
           }
     }
     //hitung hasil vote dengan no urut 3 senat
-    public function hitung_senat_3(){
+    public function hitung_senat_3(string $angkatan){
         $where =array(
-            'SENAT'=>3
+            'SENAT'=>3,
+            'angkatan' => $angkatan
         );
         $this->db->where($where);
         $this->db->from('hasil_vote');
         $query = $this->db->count_all_results();
 
-         if($query>=0){
+         if($query > 0){
              return $query;
           }else{
-              return false;
+              return 0;
           }
     }
     //hitung hasil vote dengan no urut 4 senat
-    public function hitung_senat_4(){
+    public function hitung_senat_4(string $angkatan){
         $where =array(
-            'SENAT'=>4
+            'SENAT'=>4,
+            'angkatan' => $angkatan
         );
         $this->db->where($where);
         $this->db->from('hasil_vote');
         $query = $this->db->count_all_results();
 
-         if($query>=0){
+         if($query > 0){
              return $query;
           }else{
-              return false;
+              return 0;
           }
     }
 

@@ -93,5 +93,5 @@ $route['hapus-senat/(:num)'] = 'admin/hapus_senat/$1';
 $route['update-senat/(:num)'] = 'admin/update_senat/$1';
 $route['update-kandidat-senat/(:num)'] = 'admin/valid_update_senat/$1';
 
-$route['monitoring'] = 'admin/monitoring';
+$route['monitoring'] = 'welcome/monitoring';
 

@@ -11,7 +11,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="refresh" content="5; URL=http://localhost/pemiltas/hitung-vote">
+  <!-- <meta http-equiv="refresh" content="5; URL=http://localhost/pemiltas/hitung-vote"> -->
   <title>Pemiltas FKM | Perolehan Suara</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -33,7 +33,7 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
@@ -81,7 +81,7 @@
         chart.draw(data, options);
       }
 
-    </script>
+    </script> -->
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -201,8 +201,9 @@
               <h3 class="box-title">Grafik Perolehan Suara</h3>
             </div>
             <div class="box-body">
-                <div class="pull-left" id="donut_bem" style="width: 500px; height: 300px;"></div>
-                <div class="pull-right" id="donut_senat" style="width: 500px; height: 300px;"></div>
+                <!-- <div class="pull-left" id="donut_bem" style="width: 500px; height: 300px;"></div>
+                <div class="pull-right" id="donut_senat" style="width: 500px; height: 300px;"></div> -->
+                <div id="donut-chart" style="height: 300px;"></div>
             </div>
             <!-- /.box-body-->
           </div>
@@ -358,18 +359,28 @@
 <script>
   $(function () {
 
+    var updateInterval = 500; 
+    var realtime = "on"; 
+    function update() {
 
-    /*
-     * DONUT CHART
-     * -----------
-     */
+      interactive_plot.setData([donutData]);
+
+      interactive_plot.draw();
+      if (realtime === "on")
+        setTimeout(update, updateInterval);
+    }
+
+    if (realtime === "on") {
+      update();
+    }
 
     var donutData = [
-      {label: "Paslon1", data: 30.6, color: "#3c8dbc"},
-      {label: "Paslon2", data: 19.4, color: "#0073b7"},
-      {label: "Paslon3", data: 50, color: "#00c0ef"}
+      {label: "Paslon1", data: <?php echo "$no1"; ?>, color: "#3c8dbc"},
+      {label: "Paslon2", data: <?php echo "$no2"; ?>, color: "#0073b7"},
+      {label: "Paslon3", data: <?php echo "$no3"; ?>, color: "#00c0ef"}
     ];
-    $.plot("#donut-bem", donutData, {
+
+    var interactive_plot = $.plot("#donut-chart", [donutData], {
       series: {
         pie: {
           show: true,
@@ -387,40 +398,12 @@
       legend: {
         show: false
       }
-    });
-
-    var donutData = [
-      {label: "Series2", data: 30, color: "#3c8dbc"},
-      {label: "Series3", data: 20, color: "#0073b7"},
-      {label: "Series4", data: 50, color: "#00c0ef"}
-    ];
-    $.plot("#donut-senat", donutData, {
-      series: {
-        pie: {
-          show: true,
-          radius: 1,
-          innerRadius: 0.5,
-          label: {
-            show: true,
-            radius: 2 / 3,
-            formatter: labelFormatter,
-            threshold: 0.1
-          }
-
-        }
-      },
-      legend: {
-        show: false
-      }
-    });
-    /*
-     * END DONUT CHART
-     */
-
-    
+    });  
 
   });
 
+    
+    
   /*
    * Custom Label formatter
    * ----------------------

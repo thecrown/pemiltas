@@ -501,14 +501,15 @@ class Admin extends CI_Controller {
 			}
 	}
 	public function hitung_vote(){
+
 		$data['no1']=$this->Admin_model->hitung_bem_1();
 		$data['no2']=$this->Admin_model->hitung_bem_2();
 		$data['no3']=$this->Admin_model->hitung_bem_3();
 		$data['no4']=$this->Admin_model->hitung_bem_4();
-		$data['nos1']=$this->Admin_model->hitung_senat_1();
-		$data['nos2']=$this->Admin_model->hitung_senat_2();
-		$data['nos3']=$this->Admin_model->hitung_senat_3();
-		$data['nos4']=$this->Admin_model->hitung_senat_4();	
+		$data['nos1']=$this->Admin_model->hitung_senat_1("2015");
+		$data['nos2']=$this->Admin_model->hitung_senat_2("2015");
+		$data['nos3']=$this->Admin_model->hitung_senat_3("2015");
+		$data['nos4']=$this->Admin_model->hitung_senat_4("2015");	
 
 		$data['bem_total'] = $this->Admin_model->stotal_bem();
 		$data['bem_sudah'] = $this->Admin_model->sudah_bem();
@@ -522,20 +523,4 @@ class Admin extends CI_Controller {
 		// var_dump($data);
 	}
 
-	public function monitoring(){
-		$data['bem_total'] = $this->Admin_model->stotal_bem();
-		$data['bem_sudah'] = $this->Admin_model->sudah_bem();
-		$data['bem_belum'] = $this->Admin_model->belum_bem();
-		$data['senat_total'] = $this->Admin_model->stotal_senat();
-		$data['senat_sudah'] = $this->Admin_model->sudah_senat();
-		$data['senat_belum'] = $this->Admin_model->belum_senat();
-		$data['total15'] = $this->Admin_model->total_senat_angkatan("2015");
-		$data['sudah15'] = $this->Admin_model->sudah_senat_angkatan("2015");
-		$data['total16'] = $this->Admin_model->total_senat_angkatan("2016");
-		$data['sudah16'] = $this->Admin_model->sudah_senat_angkatan("2016");
-		$data['total17'] = $this->Admin_model->total_senat_angkatan("2017");
-		$data['sudah17'] = $this->Admin_model->sudah_senat_angkatan("2017");
-
-		$this->load->view('user/monitoring', $data);
-	}
 }
