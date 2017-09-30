@@ -533,10 +533,10 @@ class Admin extends CI_Controller {
 		$data['senat_sudah'] = $this->Admin_model->sudah_senat();
 		$data['senat_belum'] = $this->Admin_model->belum_senat();
 
-		$data['xkandidat_bem'] = $this->Admin_model->get_jml_kandidat_bem();
-		$data['xkandidat_senat15'] = $this->Admin_model->get_jml_kandidat_senat("2015");
-		$data['xkandidat_senat16'] = $this->Admin_model->get_jml_kandidat_senat("2016");
-		$data['xkandidat_senat17'] = $this->Admin_model->get_jml_kandidat_senat("2017");
+		// $data['xkandidat_bem'] = $this->Admin_model->get_jml_kandidat_bem();
+		// $data['xkandidat_senat15'] = $this->Admin_model->get_jml_kandidat_senat("2015");
+		// $data['xkandidat_senat16'] = $this->Admin_model->get_jml_kandidat_senat("2016");
+		// $data['xkandidat_senat17'] = $this->Admin_model->get_jml_kandidat_senat("2017");
 
 		// $data['kbem'] = $this->Admin_model->get_data_kandidat_bem();
 		// $data['ks15'] = $this->Admin_model->get_data_kandidat_senat("2015");
